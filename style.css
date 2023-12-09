@@ -1,0 +1,60 @@
+@font-face {
+    font-family:'Eczar';
+    src: url(polices/Eczar-Regular.ttf);
+}
+@font-face {
+    font-family: 'Nunito';
+    src: url(polices/Nunito-Regular.ttf);
+}
+#header a{
+    color: white;
+    font-weight: bold;
+
+}
+#header{
+    background-color: rgb(135, 208, 222);
+}
+
+#header .nav-item :hover{
+color:white;
+background-color:#007bff;
+margin: 6PX;
+}
+.card img {
+    height: 300PX;
+
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.bloc{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+.cartes{
+    border: 1px solid #5c7eea;
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 10PX;
+    text-align: center;
+    border-radius: 8PX;
+    width: 300PX;
+    height: 200PX;
+    color: #5c7eea;
+    margin-bottom: 2em;
+
+}
+.cartes:hover{
+    box-shadow: 2px 2px 5px #888888;
+}
+.icones{
+    height:200px;
+    width: 200PX;
+    margin-bottom: 0;
+}
+.text{
+    text-align:center ;
+    margin-left: 0;
+}
