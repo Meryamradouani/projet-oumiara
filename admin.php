@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Insérer les données dans la table evenements
     $query = "INSERT INTO `evenement` (`date_debut`, `lieu`, `date_fin`, `description`, `titre`, `photo`, `createur`) 
-              VALUES ('$date_debut', '$lieu', '$date_fin', '$description', '$titre', '$nom_photo', '$createur')";
+              VALUES ('$date_debut', '$lieu', '$date_fin', '$description', '$titre', '$chemin_photo', '$createur')";
     $result = mysqli_query($link, $query);
 
     // Vérifier les erreurs de la requête
