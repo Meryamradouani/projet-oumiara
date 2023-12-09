@@ -1,6 +1,13 @@
 <?php
 // Inclure le fichier de configuration pour la connexion à la base de données
 include('connexion.php');
+session_start();
+
+// Vérifier si l'utilisateur est connecté et a le rôle d'administrateur
+if (!isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === false ) {
+    // Rediriger vers la page d'accueil si l'utilisateur n'est pas connecté en tant qu'administrateur
+    header('Location: index.php');
+    exit();}
 
 // Vérifier si le formulaire pour créer un nouvel événement est soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -13,23 +20,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $createur = $_POST['createur'];
 
     // Insérer les données dans la table evenements
-    $query = "INSERT INTO evenements (titre, description, date, lieu, categorie, createur) 
-              VALUES ('$titre', '$description', '$date', '$lieu', '$categorie', '$createur')";
-    $result = mysqli_query($conn, $query);
+    $query = "INSERT INTO evenement (date_debut,lieu,date_fin,description,titre,photo,createur) 
+              VALUES ('$date_debut', '$lieu', '$date_fin', '$description', '$titre', '$photo','$createur')";
+    $result = mysqli_query($link, $query);
 
     // Vérifier les erreurs de la requête
     if (!$result) {
-        die("Erreur de la requête : " . mysqli_error($conn));
+        die("Erreur de la requête : " . mysqli_error($link));
     }
 }
 
 // Récupérer la liste des événements depuis la base de données
-$query = "SELECT * FROM evenements";
-$result = mysqli_query($conn, $query);
+$query = "SELECT * FROM evenement";
+$result = mysqli_query($link, $query);
 
 // Vérifier les erreurs de la requête
 if (!$result) {
-    die("Erreur de la requête : " . mysqli_error($conn));
+    die("Erreur de la requête : " . mysqli_error($link));
 }
 ?>
 
@@ -52,16 +59,20 @@ if (!$result) {
         <label for="description">Description :</label>
         <textarea name="description" required></textarea>
 
-        <label for="date">Date :</label>
-        <input type="date" name="date" required>
+        <label for="date">Date de debut  :</label>
+        <input type="date" name="date_debut" required>
+
+        <label for="date">Date de fin :</label>
+        <input type="date" name="date_fin" required>
+
 
         <label for="lieu">Lieu :</label>
         <input type="text" name="lieu" required>
 
-        <label for="categorie">Catégorie :</label>
-        <input type="text" name="categorie" required>
-
         <label for="createur">Créateur :</label>
+        <input type="text" name="createur" required>
+
+        <label for="photo">Photo:</label>
         <input type="text" name="createur" required>
 
         <button type="submit">Créer un événement</button>
