@@ -82,11 +82,11 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
             Club</button></a>
         </li>
         <li class="ml-3" class="mr-3">
-          <a  href="ajouterevenement.php"><button type="button" class="btn btn-success btn-info mr-3" data-bs-toggle="dropdown" aria-expanded="false">
+          <a  href="event.php"><button type="button" class="btn btn-success btn-info mr-3" data-bs-toggle="dropdown" aria-expanded="false">
             Evénement</button></a>
         </li>
         <li class="ml-3" class="mr-3">
-          <a  href="ajouterevenement.php"><button type="button" class="btn btn-success btn-info mr-3" data-bs-toggle="dropdown" aria-expanded="false">
+          <a  href="event.php"><button type="button" class="btn btn-success btn-info mr-3" data-bs-toggle="dropdown" aria-expanded="false">
             ajouter Evénement</button></a>
         </li>
    
