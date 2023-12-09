@@ -1,7 +1,6 @@
 /* Tables */
-
 CREATE TABLE UTILISATEUR (
-    id_utilisateur INTEGER NOT NULL,
+    id_utilisateur INTEGER NOT NULL AUTO_INCREMENT,
     fonctionalite VARCHAR(100) NOT NULL,
     nom VARCHAR(100) NOT NULL,
     prenom VARCHAR(100) NOT NULL,
@@ -10,7 +9,7 @@ CREATE TABLE UTILISATEUR (
 );
 
 CREATE TABLE DEMANDE_EVENEMENT (
-    id_demande INTEGER NOT NULL,
+    id_demande INTEGER NOT NULL AUTO_INCREMENT,
     titre_propose VARCHAR(100) NOT NULL,
     description_propose VARCHAR(1000) NOT NULL,
     UTILISATEUR_id_utilisateur INTEGER NOT NULL,
@@ -19,7 +18,7 @@ CREATE TABLE DEMANDE_EVENEMENT (
 );
 
 CREATE TABLE EVENEMENT (
-    id_evenement INTEGER NOT NULL,
+    id_evenement INTEGER NOT NULL AUTO_INCREMENT,
     date_debut DATE NOT NULL,
     lieu VARCHAR(100) NOT NULL,
     date_fin DATE NOT NULL,
