@@ -1,17 +1,17 @@
 <?php
 session_start();
-
 // Vérifier si l'utilisateur est connecté
 if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) {
+    if (isset($_SESSION['login'])) {
     // Utilisateur connecté, afficher le bouton de déconnexion
-    $login=$_SESSION['login'];
     $showLoginButton = false;
     $showLogoutButton = true;
 
 } else {
-    // Utilisateur non connecté, afficher le bouton de connexion
     $showLoginButton = true;
     $showLogoutButton = false;
+
+}
 }
 ?>
 <!DOCTYPE html>
@@ -128,9 +128,15 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
 <div class="container mt-5">
     
      <?php
-     if (isset($_SESSION['login'])) 
-     echo "<h2> bienvenue ". $login; ?>
-     </p>
+    if (isset($_SESSION['login'])) {
+        // La clé "login" existe, vous pouvez l'utiliser
+        $login = $_SESSION['login'];
+        echo "<h2>Bonjour,". $login." !</h2>";
+    } else {
+        // La clé "login" n'existe pas dans la session
+        echo "Bonjour, visiteur!";
+    }
+    ?>
 
     <div class="card mb-3">
   <img src="photo/WhatsApp Image 2023-12-08 at 23.38.53_c551eb96.jpg" class="card-img-top" alt="...">
@@ -176,7 +182,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                             <a href="#" class="btn btn-info">En savoir plus</a>
                         </div>
                     </div>
-            </div>
+            </div><br><br>
             <h1 class="mg-5" > les activiés parascolaires  :</h1> <br><br>
             <div class="row">
                 <div class="col-md-4 ">
@@ -218,7 +224,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
             
         </div>
         
-</div>
+</div><br><br>
 <footer class="footer mt-5 mb-5 text-white card shadow-lg" style="background-color: darkcyan">
     <div class="container">
       <div class="row mt-5 mb-5">

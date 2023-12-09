@@ -5,12 +5,11 @@ include('connexion.php');
 session_start();
 
 // Vérifier si l'utilisateur est connecté et a le rôle d'administrateur
-if (!isset($_SESSION['user_logged_in']) || $_SESSION['user_logged_in'] !== true ) {
-    // Rediriger vers la page d'accueil si l'utilisateur n'est pas connecté en tant qu'administrateur
+if (!isset($_SESSION['user_logged_in']) || $_SESSION['user_logged_in'] !== true) {
+    // Rediriger vers la page d'accueil
     header('Location: index.php');
-    exit();
+    exit(); // Assurez-vous de terminer le script après la redirection
 }
-
 // Vérifier si le formulaire pour créer un nouvel événement est soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupérer les données du formulaire

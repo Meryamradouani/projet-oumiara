@@ -8,6 +8,7 @@
 <?php
 session_start();
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_email = $_POST['email'];
     $user_password = $_POST['pswd'];
@@ -15,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['user_logged_in'] = true;
 
     if ( $login=='admin' &&   $user_email == 'admin1@gmail.com' &&  $user_password == 'admin2023') {
+        $login=$_POST['login'];
         header('Location: admin.php');
         exit();
     }else {
