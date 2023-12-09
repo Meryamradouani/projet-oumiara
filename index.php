@@ -1,16 +1,18 @@
 <?php
 session_start();
 // Vérifier si l'utilisateur est connecté
+$showLoginButton = true;
+$showLogoutButton = false;
 if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) {
     if (isset($_SESSION['login'])) {
     // Utilisateur connecté, afficher le bouton de déconnexion
-    $showLoginButton = false;
     $showLogoutButton = true;
-
+    $showLoginButton = false;
 } else {
     $showLoginButton = true;
     $showLogoutButton = false;
 
+ 
 }
 }
 ?>
@@ -155,7 +157,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                         <div class="card-body">
                             <h5 class="card-title">Forum ENSAK-Entreprises de kenitra </h5>
                             <p class="card-text">L'unique Forum ENSAK-Entreprises De Kenitra refait surface pour une 7ème édition </p>
-                            <a href="#" class="btn btn-info">En savoir plus</a>
+                            <a href="detail.html" class="btn btn-info">En savoir plus</a>
                         </div>
                     </div>
                 </div>
@@ -167,7 +169,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                         <div class="card-body">
                             <h5 class="card-title">Journée Nationale des systemes embarqués</h5><br>
                             <p class="card-text">la digitalisation et l'intelligence artificielle : quel futur pour le maroc !</p>
-                            <a href="#" class="btn btn-info">En savoir plus</a>
+                            <a  href="#event1" href="detail.html" class="btn btn-info">En savoir plus</a>
                         </div>
                     </div>
                 </div>
@@ -179,7 +181,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                         <div class="card-body">
                             <h5 class="card-title">Journée national de la mécatronique </h5>
                             <p class="card-text">un nouveau modéle de formation d'ingénieurs </p>
-                            <a href="#" class="btn btn-info">En savoir plus</a>
+                            <a href="detail.html" class="btn btn-info">En savoir plus</a>
                         </div>
                     </div>
             </div><br><br>
@@ -191,7 +193,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                         <div class="card-body">
                             <h5 class="card-title">caravane humanitaire al amal 4 </h5>
                             <p class="card-text">club assoctiatif ANARUZ  </p>
-                            <a href="#" class="btn btn-info">En savoir plus</a>
+                            <a href="detail.html" class="btn btn-info">En savoir plus</a>
                         </div>
                     </div>
                 </div> 
@@ -203,7 +205,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                         <div class="card-body">
                             <h5 class="card-title">صدى الوحي لتجويد القرءان الكريم </h5>
                             <p class="card-text">club afaaq </p>
-                            <a href="#" class="btn btn-info">En savoir plus</a>
+                            <a href="detail.html" class="btn btn-info">En savoir plus</a>
                         </div>
                     </div>
                 </div>
@@ -215,7 +217,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                         <div class="card-body">
                             <h5 class="card-title">soirée ftour  </h5>
                             <p class="card-text">pour la premier fois une opportunité unique   </p>
-                            <a href="#" class="btn btn-info">En savoir plus</a>
+                            <a href="detail.html" class="btn btn-info">En savoir plus</a>
                         </div>
                     </div>
                     </div>
