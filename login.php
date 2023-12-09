@@ -13,10 +13,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_password = $_POST['pswd'];
     $login=$_POST['login'];
     $_SESSION['user_logged_in'] = true;
+
     if ( $login=='admin' &&   $user_email == 'admin1@gmail.com' &&  $user_password == 'admin2023') {
         header('Location: admin.php');
         exit();
     }else {
+        $_SESSION['user_logged_in'] = true;
+        $_SESSION['login']=$_POST['login'];
             header('Location: index.php');
             exit();
         }
