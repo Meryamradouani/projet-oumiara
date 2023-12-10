@@ -39,8 +39,32 @@ if (isset($_POST['id_evenement'])) {
     <p>Lieu : <?= $eventDetails['lieu'] ?></p>
     <p>Description : <?= $eventDetails['description'] ?></p>
     <p>Créateur : <?= $eventDetails['createur'] ?></p>
+    <?php
+// Connexion à la base de données (assurez-vous d'adapter les informations de connexion)
+$mysqli = new mysqli("localhost", "root", "", "gestion");
 
-    <a href="inscription.php">S'inscrire</a>
+// Vérifier la connexion
+if ($mysqli->connect_error) {
+    die("Échec de la connexion à la base de données : " . $mysqli->connect_error);
+}
+
+// Récupérer les événements depuis la base de données
+$result = $mysqli->query("SELECT id_evenement, titre FROM evenement");
+
+// Vérifier s'il y a des résultats
+if ($result->num_rows > 0) {
+    // Afficher les liens pour chaque événement
+    while ($row = $result->fetch_assoc()) {
+        echo '<a href="inscription.php?event_id=' . $row['id_evenement'] . '">S\'inscrire à ' . $row['titre'] . '</a>';
+    }
+} else {
+    echo "Aucun événement trouvé.";
+}
+
+// Fermer la connexion à la base de données
+$mysqli->close();
+?>
+
    
 </body>
 </html>
