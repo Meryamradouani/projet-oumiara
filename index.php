@@ -102,7 +102,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
             Evénement</button></a>
         </li>
         <li class="ml-3" class="mr-3">
-          <a  href="ajouter.php"><button type="button" class="btn btn-success btn-info mr-3" data-bs-toggle="dropdown" aria-expanded="false">
+          <a  href="demande.php"><button type="button" class="btn btn-success btn-info mr-3" data-bs-toggle="dropdown" aria-expanded="false">
             ajouter Evénement</button></a>
         </li>
    
@@ -171,7 +171,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                         <div class="card-body">
                             <h5 class="card-title">Journée Nationale des systemes embarqués</h5><br>
                             <p class="card-text">la digitalisation et l'intelligence artificielle : quel futur pour le maroc !</p>
-                            <a  href="detail.html#event2" class="btn btn-info">En savoir plus</a>
+                            <a  href="detail.php#event3" class="btn btn-info">En savoir plus</a>
                         </div>
                     </div>
                 </div>
@@ -183,7 +183,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                         <div class="card-body">
                             <h5 class="card-title">Journée national de la mécatronique </h5>
                             <p class="card-text">un nouveau modéle de formation d'ingénieurs </p>
-                            <a  href="detail.html#event3" class="btn btn-info">En savoir plus</a>
+                            <a  href="detail.php#event2" class="btn btn-info">En savoir plus</a>
                         </div>
                     </div>
             </div><br><br>
@@ -193,9 +193,9 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                     <div class="card">
                         <img src="photo/WhatsApp Image 2023-12-09 at 01.07.49_7022c64d.jpg" class="card-img-top" alt="Projet 3">
                         <div class="card-body">
-                            <h5 class="card-title">caravane humanitaire al amal 4 </h5>
+                            <h5 class="card-title">caravane humanitaire al amal 5</h5>
                             <p class="card-text">club assoctiatif ANARUZ  </p>
-                            <a  href="detail.html#event4" class="btn btn-info">En savoir plus</a>
+                            <a  href="detail.php#event4" class="btn btn-info">En savoir plus</a>
                         </div>
                     </div>
                 </div> 
@@ -207,7 +207,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                         <div class="card-body">
                             <h5 class="card-title">صدى الوحي لتجويد القرءان الكريم </h5>
                             <p class="card-text">club afaaq </p>
-                            <a  href="detail.html#event5" class="btn btn-info">En savoir plus</a>
+                            <a  href="detail.php#event5" class="btn btn-info">En savoir plus</a>
                         </div>
                     </div>
                 </div>
@@ -219,7 +219,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                         <div class="card-body">
                             <h5 class="card-title">soirée ftour  </h5>
                             <p class="card-text">pour la premier fois une opportunité unique   </p>
-                            <a   href="detail.html#event6"class="btn btn-info">En savoir plus</a>
+                            <a   href="detail.php#event6"cphp="btn btn-info">En savoir plus</a>
                         </div>
                     </div>
                     </div>

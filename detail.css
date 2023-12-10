@@ -1,10 +1,14 @@
-body, html {
-    margin: 0;
-    height: 100%;
-    text-align: center;
+body{
+    margin:auto;
     font-family:"Nunito";
     color: #999;
+    padding:10PX;
+    width: 90%;
+    text-align: center;
+
   }
+
+
   
   h1 {
     text-transform: uppercase;
@@ -174,3 +178,4 @@ body, html {
     height: 250PX;
     width: 300PX;
 }
+
