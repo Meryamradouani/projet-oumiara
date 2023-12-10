@@ -219,7 +219,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                         <div class="card-body">
                             <h5 class="card-title">soirée ftour  </h5>
                             <p class="card-text">pour la premier fois une opportunité unique   </p>
-                            <a   href="detail.php#event6"cphp="btn btn-info">En savoir plus</a>
+                            <a   href="detail.php#event6" class="btn btn-info">En savoir plus</a>
                         </div>
                     </div>
                     </div>
