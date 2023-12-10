@@ -159,7 +159,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                         <div class="card-body">
                             <h5 class="card-title">Forum ENSAK-Entreprises de kenitra </h5>
                             <p class="card-text">L'unique Forum ENSAK-Entreprises De Kenitra refait surface pour une 7ème édition </p>
-                            <a href="detail.html#event1" class="btn btn-info">En savoir plus</a>
+                            <a href="detail.php#event1" class="btn btn-info">En savoir plus</a>
                         </div>
                     </div>
                 </div>
