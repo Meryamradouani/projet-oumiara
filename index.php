@@ -1,16 +1,18 @@
 <?php
 session_start();
 // Vérifier si l'utilisateur est connecté
+$showLoginButton = true;
+$showLogoutButton = false;
 if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) {
     if (isset($_SESSION['login'])) {
     // Utilisateur connecté, afficher le bouton de déconnexion
-    $showLoginButton = false;
     $showLogoutButton = true;
-
+    $showLoginButton = false;
 } else {
     $showLoginButton = true;
     $showLogoutButton = false;
 
+ 
 }
 }
 ?>
@@ -92,7 +94,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
             About Us</button></a>
         </li>
         <li class="ml-3" class="mr-3">
-          <a  href="ajouterevenement.php"><button type="button" class="btn btn-success btn-info mr-3" data-bs-toggle="dropdown" aria-expanded="false">
+          <a  href="club.php"><button type="button" class="btn btn-success btn-info mr-3" data-bs-toggle="dropdown" aria-expanded="false">
             Club</button></a>
         </li>
         <li class="ml-3" class="mr-3">
@@ -100,20 +102,22 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
             Evénement</button></a>
         </li>
         <li class="ml-3" class="mr-3">
-          <a  href="event.php"><button type="button" class="btn btn-success btn-info mr-3" data-bs-toggle="dropdown" aria-expanded="false">
+          <a  href="ajouter.php"><button type="button" class="btn btn-success btn-info mr-3" data-bs-toggle="dropdown" aria-expanded="false">
             ajouter Evénement</button></a>
         </li>
    
    
-        <?php if ($showLoginButton): ?>
+        <?php if (isset($showLoginButton) && $showLoginButton): ?>
         <li class="ml-3" class="mr-3">
             <a href="login.php"><button type="button" class="btn btn-success btn-info  mr-3">login</button></a>
-            <?php endif; ?>
         </li>
-        <?php if ($showLogoutButton ): ?>
+    <?php endif; ?>
+
+    <?php if (isset($showLogoutButton) && $showLogoutButton): ?>
         <li class="ml-3" class="mr-3">
             <a href="logout.php"><button type="button" class="btn btn-danger">Déconnexion</button></a>
-        <?php endif; ?>
+        </li>
+    <?php endif; ?>
         </li>
         
     </ul>
@@ -155,7 +159,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                         <div class="card-body">
                             <h5 class="card-title">Forum ENSAK-Entreprises de kenitra </h5>
                             <p class="card-text">L'unique Forum ENSAK-Entreprises De Kenitra refait surface pour une 7ème édition </p>
-                            <a href="#" class="btn btn-info">En savoir plus</a>
+                            <a href="detail.html#event1" class="btn btn-info">En savoir plus</a>
                         </div>
                     </div>
                 </div>
@@ -167,7 +171,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                         <div class="card-body">
                             <h5 class="card-title">Journée Nationale des systemes embarqués</h5><br>
                             <p class="card-text">la digitalisation et l'intelligence artificielle : quel futur pour le maroc !</p>
-                            <a href="#" class="btn btn-info">En savoir plus</a>
+                            <a  href="detail.html#event2" class="btn btn-info">En savoir plus</a>
                         </div>
                     </div>
                 </div>
@@ -179,7 +183,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                         <div class="card-body">
                             <h5 class="card-title">Journée national de la mécatronique </h5>
                             <p class="card-text">un nouveau modéle de formation d'ingénieurs </p>
-                            <a href="#" class="btn btn-info">En savoir plus</a>
+                            <a  href="detail.html#event3" class="btn btn-info">En savoir plus</a>
                         </div>
                     </div>
             </div><br><br>
@@ -191,7 +195,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                         <div class="card-body">
                             <h5 class="card-title">caravane humanitaire al amal 4 </h5>
                             <p class="card-text">club assoctiatif ANARUZ  </p>
-                            <a href="#" class="btn btn-info">En savoir plus</a>
+                            <a  href="detail.html#event4" class="btn btn-info">En savoir plus</a>
                         </div>
                     </div>
                 </div> 
@@ -203,7 +207,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                         <div class="card-body">
                             <h5 class="card-title">صدى الوحي لتجويد القرءان الكريم </h5>
                             <p class="card-text">club afaaq </p>
-                            <a href="#" class="btn btn-info">En savoir plus</a>
+                            <a  href="detail.html#event5" class="btn btn-info">En savoir plus</a>
                         </div>
                     </div>
                 </div>
@@ -215,7 +219,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                         <div class="card-body">
                             <h5 class="card-title">soirée ftour  </h5>
                             <p class="card-text">pour la premier fois une opportunité unique   </p>
-                            <a href="#" class="btn btn-info">En savoir plus</a>
+                            <a   href="detail.html#event6"class="btn btn-info">En savoir plus</a>
                         </div>
                     </div>
                     </div>
