@@ -77,26 +77,6 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
     }
   /* Your existing styles */
 
-  @media (max-width: 500px) {
-    /* Styles for screens with a maximum width of 768 pixels */
-    .navbar-collapse {
-      background-color: darkcyan;
-    }
-
-    .navbar-nav {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .navbar-nav .nav-item {
-      margin-right: 0;
-    }
-
-    .navbar-brand img {
-      max-width: 80%; /* Adjust the logo size for small screens */
-    }
-  }
-
   @media (max-width: 768px) {
     /* Styles for screens with a maximum width of 768 pixels */
     .navbar-collapse {
@@ -225,12 +205,12 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
         echo "<h2>Bonjour,". $login." !</h2>";
     } else {
         // La clé "login" n'existe pas dans la session
-        echo "Bonjour, visiteur!";
+        echo " <h2> Bonjour, visiteur! </h2>"."<br>";
     }
     ?>
 
     <div class="card mb-3">
-  <img src="photo/WhatsApp Image 2023-12-08 at 23.38.53_c551eb96.jpg" class="card-img-top" alt="...">
+  <img  src="photo/WhatsApp Image 2023-12-08 at 23.38.53_c551eb96.jpg" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Bienvenue à l'ENSA</h5>
     <p class="card-text">L'école où l'excellence académique rencontre l'innovation.</p>
