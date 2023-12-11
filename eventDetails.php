@@ -53,10 +53,8 @@ $result = $mysqli->query("SELECT id_evenement, titre FROM evenement");
 
 // Vérifier s'il y a des résultats
 if ($result->num_rows > 0) {
-    // Afficher les liens pour chaque événement
-    while ($row = $result->fetch_assoc()) {
-        echo '<a href="inscription.php?event_id=' . $row['id_evenement'] . '">S\'inscrire à ' . $row['titre'] . '</a>';
-    }
+    // Afficher le lien uniquement pour l'événement en cours
+    echo '<a href="inscription.php?event_id=' . $eventDetails['id_evenement'] . '">S\'inscrire à ' . $eventDetails['titre'] . '</a>';
 } else {
     echo "Aucun événement trouvé.";
 }
