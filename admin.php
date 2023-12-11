@@ -2,6 +2,9 @@
 // Inclure le fichier de configuration pour la connexion à la base de données
 include('connexion.php');
 session_start();
+if(!isset($_SESSION['admin'])){
+    header('location: login.php');
+}
 
 // Vérifier si l'utilisateur est connecté et a le rôle d'administrateur
 if (!isset($_SESSION['user_logged_in']) || $_SESSION['user_logged_in'] !== true) {

@@ -75,8 +75,100 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
     .card-title {
     font-size: 1.25rem; /* Ajustez la taille selon vos préférences */
     }
+  /* Your existing styles */
 
-    </style>
+  @media (max-width: 500px) {
+    /* Styles for screens with a maximum width of 768 pixels */
+    .navbar-collapse {
+      background-color: darkcyan;
+    }
+
+    .navbar-nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .navbar-nav .nav-item {
+      margin-right: 0;
+    }
+
+    .navbar-brand img {
+      max-width: 80%; /* Adjust the logo size for small screens */
+    }
+  }
+
+  @media (max-width: 768px) {
+    /* Styles for screens with a maximum width of 768 pixels */
+    .navbar-collapse {
+      background-color: darkcyan;
+    }
+
+    .navbar-nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .navbar-nav .nav-item {
+      margin-right: 0;
+    }
+
+    .navbar-brand img {
+      max-width: 80%; /* Adjust the logo size for small screens */
+    }
+  }
+
+  @media (max-width: 500px) {
+    /* Additional styles for screens with a maximum width of 500 pixels */
+    .navbar-nav {
+      flex-direction: column; /* Stack items in a column layout */
+      align-items: flex-start;
+    }
+
+    .navbar-toggler {
+      display: block;
+    }
+
+    .navbar-collapse {
+      display: none;
+    }
+
+    .navbar-nav .nav-item {
+      margin-bottom: 5px;
+    }
+
+    .navbar-brand img {
+      max-width: 60%; /* Further adjust the logo size for smaller screens */
+    }
+
+    .navbar-collapse.show {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+</style>
+<script>
+    function performSearch() {
+        // Get the search query from the input field
+        var query = document.getElementById('searchInput').value.toLowerCase();
+
+        // Get all elements you want to search within
+        var elementsToSearch = document.querySelectorAll('.card-title, .card-text');
+
+        // Loop through each element and check if it contains the search query
+        elementsToSearch.forEach(function (element) {
+            var textContent = element.textContent.toLowerCase();
+            if (textContent.includes(query)) {
+                // If it contains the query, show the element
+                element.closest('.card').style.display = 'block';
+            } else {
+                // If it doesn't contain the query, hide the element
+                element.closest('.card').style.display = 'none';
+            }
+        });
+    }
+</script>
+
+    
 </head>
 <body>
 
@@ -84,48 +176,43 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
 <nav id="header" class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="mr-3" href="index.php"><img src="ensak-logo.png" alt="logo"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="ml-3" class="mr-3">
-          <a  href="ajouterevenement.php"><button type="button" class="btn btn-success btn-info mr-3" data-bs-toggle="dropdown" aria-expanded="false">
-            About Us</button></a>
+        <li class="ml-3">
+          <a href="ajouterevenement.php" class="btn btn-success btn-info mr-3">About Us</a>
         </li>
-        <li class="ml-3" class="mr-3">
-          <a  href="club.php"><button type="button" class="btn btn-success btn-info mr-3" data-bs-toggle="dropdown" aria-expanded="false">
-            Club</button></a>
+        <li class="ml-3">
+          <a href="club.php" class="btn btn-success btn-info mr-3">Club</a>
         </li>
-        <li class="ml-3" class="mr-3">
-          <a  href="event.php"><button type="button" class="btn btn-success btn-info mr-3" data-bs-toggle="dropdown" aria-expanded="false">
-            Evénement</button></a>
+        <li class="ml-3">
+          <a href="event.php" class="btn btn-success btn-info mr-3">Evénement</a>
         </li>
-        <li class="ml-3" class="mr-3">
-          <a  href="demande.php"><button type="button" class="btn btn-success btn-info mr-3" data-bs-toggle="dropdown" aria-expanded="false">
-            ajouter Evénement</button></a>
+        <li class="ml-3">
+          <a href="demande.php" class="btn btn-success btn-info mr-3">ajouter Evénement</a>
         </li>
-   
-   
-        <?php if (isset($showLoginButton) && $showLoginButton): ?>
-        <li class="ml-3" class="mr-3">
-            <a href="login.php"><button type="button" class="btn btn-success btn-info  mr-3">login</button></a>
-        </li>
-    <?php endif; ?>
 
-    <?php if (isset($showLogoutButton) && $showLogoutButton): ?>
-        <li class="ml-3" class="mr-3">
-            <a href="logout.php"><button type="button" class="btn btn-danger">Déconnexion</button></a>
-        </li>
-    <?php endif; ?>
-        </li>
-        
-    </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control ml-3 me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-success  btn-info mr-3 ml-3" type="submit"> Search </button>
-        
-      </form>
+        <?php if (isset($showLoginButton) && $showLoginButton): ?>
+          <li class="ml-3">
+            <a href="login.php" class="btn btn-success btn-info mr-3">login</a>
+          </li>
+        <?php endif; ?>
+
+        <?php if (isset($showLogoutButton) && $showLogoutButton): ?>
+          <li class="ml-3">
+            <a href="logout.php" class="btn btn-danger">Déconnexion</a>
+          </li>
+        <?php endif; ?>
+      </ul>
+      <!-- Update your search form with this -->
+<form class="d-flex" role="search">
+    <input class="form-control ml-3 me-2" type="search" id="searchInput" placeholder="Search" aria-label="Search">
+    <button class="btn btn-success btn-info mr-3 ml-3" type="button" onclick="performSearch()"> Search </button>
+</form>
+
+
     </div>
   </div>
 </nav>

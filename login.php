@@ -17,6 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ( $login=='admin' &&   $user_email == 'admin1@gmail.com' &&  $user_password == 'admin2023') {
         $login=$_POST['login'];
+        $_SESSION['admin']= $login=$_POST['login'];
+
         header('Location: admin.php');
         exit();
     }else {
