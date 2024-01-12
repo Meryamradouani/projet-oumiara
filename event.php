@@ -40,6 +40,8 @@ if (!$result) {
     <link rel="stylesheet" href="stylee.css">
     <title>Accueil</title>
     <style>
+<<<<<<< HEAD
+=======
     body {
         font-family: "Nunito";
     }
@@ -184,6 +186,7 @@ if (!$result) {
         }
 
     }
+>>>>>>> e49edae5da9c5448da1026d067f2e5f7a4fea8c1
 </style>
 </head>
 <body>

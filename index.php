@@ -246,7 +246,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
           <a href="event.php" class="btn btn-success btn-info nav-link mr-3">Evénement</a>
         </li>
         <li class="ml-3">
-          <a href="demande.php" class="btn btn-success btn-info nav-link mr-3">ajouter Evénement</a>
+          <a href="demandeur.php" class="btn btn-success btn-info nav-link mr-3">ajouter Evénement</a>
         </li>
         <?php if (isset($showLoginButton) && $showLoginButton): ?>
           <li class="ml-3">
