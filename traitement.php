@@ -8,6 +8,7 @@ if(isset($_POST['submit'])){
     $description=$_POST['description'];;
     $dated=$_POST['dated'];
     $datef=$_POST['datef'];
+    $createur=$_POST['createur'];
 	
 	if(isset($_FILES['fichier']) and $_FILES['fichier']['error']==0)
 	{
@@ -38,7 +39,7 @@ if(isset($_POST['submit'])){
 		$ph_name="1.png";
 	}
     $id_demandeur=$_SESSION['id_demandeur'];
-	$requette="INSERT INTO demande (id_demandeur, date_debut, date_fin, lieu, titre, description, Photo) VALUES ('$id_demandeur', '$dated', '$datef', '$lieu', '$titre', '$description', '$ph_name')";
+	$requette="INSERT INTO demande ( date_debut, date_fin, lieu, titre, description, Photo,id_demandeur,createur) VALUES ( '$dated', '$datef', '$lieu', '$titre', '$description', '$ph_name','$id_demandeur','$createur')";
     ;
 	$resultat=mysqli_query($link,$requette);
 	
