@@ -63,47 +63,171 @@ if (!$commentairesResult) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Détails de l'événement</title>
-</head>
-<body>
-    <!-- Afficher la photo de l'événement -->
-    <img src="<?= $eventDetails['photo'] ?>" alt="Photo de l'événement">
-    
-    <!-- Afficher le titre de l'événement -->
-    <h1><?= $eventDetails['titre'] ?></h1>
-    
-    <!-- Afficher les détails de l'événement -->
-    <p>Date de début : <?= $eventDetails['date_debut'] ?></p>
-    <p>Date de fin : <?= $eventDetails['date_fin'] ?></p>
-    <p>Lieu : <?= $eventDetails['lieu'] ?></p>
-    <p>Description : <?= $eventDetails['description'] ?></p>
-    <p>Créateur : <?= $eventDetails['createur'] ?></p>
-    <!-- Formulaire pour ajouter un commentaire -->
-    <form method="post" action="">
-        <label for="commentaire"></label>
-        <textarea name="commentaire" id="commentaire" rows="4" cols="50"></textarea>
-        <br>
-        <input type="submit" value="Ajouter commentaire">
-    </form>
-    <!-- Afficher le lien pour s'inscrire -->
-    <a href="inscription.php?event_id=<?= $eventDetails['id_evenement'] ?>">S'inscrire à <?= $eventDetails['titre'] ?></a>
-
-    <!-- Afficher les commentaires -->
-    <h2>Commentaires</h2>
-    <ul>
-        <?php
-        // Afficher les commentaires
-        while ($commentaire = mysqli_fetch_assoc($commentairesResult)) {
-            echo "<li>{$commentaire['contenu']} - {$commentaire['date']}</li>";
+    <style>
+        /* Styles généraux */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
 
-        // Libérer le résultat de la requête des commentaires
-        mysqli_free_result($commentairesResult);
-        ?>
-    </ul>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-    <?php
-    // Fermer la connexion à la base de données
-    mysqli_close($link);
-    ?>
+        /* Styles pour l'en-tête */
+        h1 {
+            color: #22427C;
+            margin-top: 20px;
+        }
+
+        /* Styles pour la photo de l'événement */
+        .event-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        /* Styles pour les détails de l'événement */
+        .event-details-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border: 1px solid #ddd;
+        }
+
+        .event-image {
+
+            flex: 0 0 30%; /* Ajustez la largeur de l'image en fonction de vos besoins */
+            margin-right: 10px;
+            margin-left: 0px;
+        }
+
+        .event-details {
+            flex: 0 0 40%; /* Ajustez la largeur des détails en fonction de vos besoins */
+        }
+
+        .event-details p {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Styles pour le formulaire de commentaire */
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        textarea {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #22427C;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Styles pour les commentaires */
+        h2 {
+            color: #22427C;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Styles pour le lien d'inscription */
+        a {
+            display: inline-block;
+            background-color: #22427C;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            background-color: #18345F;
+        }
+
+        /* Styles pour le pied de page */
+        footer {
+            background-color: #22427C;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="event-details-container">
+            <div class="event-image">
+                <!-- Afficher la photo de l'événement -->
+                <img src="<?= $eventDetails['photo'] ?>" alt="Photo de l'événement" style="width: 350px;">
+
+            </div>
+            <div class="event-details">
+                <!-- Afficher le titre de l'événement -->
+                <h1><?= $eventDetails['titre'] ?></h1>
+                
+                <!-- Afficher les détails de l'événement -->
+                <p>Date de début : <?= $eventDetails['date_debut'] ?></p>
+                <p>Date de fin : <?= $eventDetails['date_fin'] ?></p>
+                <p>Lieu : <?= $eventDetails['lieu'] ?></p>
+                <p>Description : <?= $eventDetails['description'] ?></p>
+                <p>Créateur : <?= $eventDetails['createur'] ?></p>
+                <a href="inscription.php?event_id=<?= $eventDetails['id_evenement'] ?>" class="link-container">S'inscrire à <?= $eventDetails['titre'] ?></a>
+            </div>
+        </div>
+        
+        <!-- Formulaire pour ajouter un commentaire -->
+        <form method="post" action="" class="form-container">
+            <label for="commentaire"></label>
+            <textarea name="commentaire" id="commentaire" rows="4" cols="50"></textarea>
+            <br>
+            <input type="submit" value="Ajouter commentaire">
+        </form>
+           <!-- Afficher les commentaires -->
+        <h2> Commentaires récents:</h2>
+        <ul class="comments-container">
+            <?php
+            // Afficher les commentaires
+            while ($commentaire = mysqli_fetch_assoc($commentairesResult)) {
+                echo "<li>{$commentaire['contenu']} - {$commentaire['date']}</li>";
+            }
+
+            // Libérer le résultat de la requête des commentaires
+            mysqli_free_result($commentairesResult);
+            ?>
+        </ul>
+    </div>
+
+    <!-- Pied de page -->
+    <footer>
+        <!-- Contenu du pied de page -->
+    </footer>
 </body>
 </html>

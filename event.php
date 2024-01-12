@@ -37,17 +37,15 @@ if (!$result) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="stylee.css">
+    <link rel="stylesheet" href="monstyle.css">
     <title>Accueil</title>
     <style>
-<<<<<<< HEAD
-=======
-    body {
+body {
         font-family: "Nunito";
     }
 
     h1 {
-        font-size: 70px;
+        font-size: 50px;
         font-family: "Eczar";
         margin-top: 6px;
         margin-bottom: 10px;
@@ -184,8 +182,9 @@ if (!$result) {
             display: flex;
             flex-direction: column;
         }
-
+        
     }
+
 >>>>>>> e49edae5da9c5448da1026d067f2e5f7a4fea8c1
 </style>
 </head>
@@ -232,25 +231,29 @@ if (!$result) {
   </div>
 </nav>
     
-    <h1>Événements à venir</h1>
+    
 
     <?php
     // Afficher la liste des événements à venir
     while ($row = mysqli_fetch_assoc($result)) {
-            echo "<div>";
-            echo "<img src='{$row['photo']}' alt='Photo de l'événement'>";
-            echo "<h2>{$row['titre']}</h2>";
-            echo "<p>Date de debut : {$row['date_debut']}</p>";
-            echo "<p>Date de fin : {$row['date_fin']}</p>";
-            echo "<p>Lieu : {$row['lieu']}</p>";
-        
-            // Formulaire pour envoyer l'ID de l'événement à eventDetails.php
-            echo "<form action='eventDetails.php' method='post'>";
-            echo "<input type='hidden' name='id_evenement' value='{$row['id_evenement']}'>";
-            echo "<button type='submit'>Détails</button>";
-            echo "</form>";
-        
-            echo "</div>";
+
+        echo"<div class='event-details-container'>";
+        echo"<div class='event-image'>";
+        echo "<img src='{$row['photo']}' alt='Photo de l'événement' style='width: 350px;' >";
+        echo "</div>";
+        echo"<div class='event-details'>";
+        echo "<h2>{$row['titre']}</h2>";
+        echo "<p>Date de debut : {$row['date_debut']}</p>";
+        echo "<p>Date de fin : {$row['date_fin']}</p>";
+        echo "<p>Lieu : {$row['lieu']}</p>";
+        // Formulaire pour envoyer l'ID de l'événement à eventDetails.php
+        echo "<form action='eventDetails.php' method='post'>";
+        echo "<input type='hidden' name='id_evenement' value='{$row['id_evenement']}'>";
+        echo "<button type='submit' class='btn-details'>Détails</button>";
+        echo "</form>";
+        echo "</div>";
+        echo "</div>";
+
         }
         
         
