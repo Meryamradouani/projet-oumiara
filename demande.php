@@ -79,7 +79,7 @@ form {
 		<form action="traitement.php" method="post"  enctype="multipart/form-data">
 			<label for="Titre">Titre:</label>
 			<input type="text" name="titre" required="required"/>
-            <label for="Createur">Titre:</label>
+            <label for="Createur">Createur:</label>
 			<input type="text" name="createur" required="required"/>
 			<label for="Date_debut">Date_debut:</label>
 			<input type="date"  name="dated" required="required"/>
