@@ -88,11 +88,100 @@ if (!$resultInscriptions) {
     <link rel="stylesheet" href="styles.css">
     <title>Gestion des événements</title>
 </head>
+<style>
+    /* styles.css */ #left-menu {
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: left;
+            padding: 10px;
+            position: fixed;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        #left-menu a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        #content {
+            margin-left: 220px; /* Largeur du menu + espace */
+            padding: 20px;
+        }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align:center;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+</style>
 <body>
+<div id="left-menu">
+        <a href="#form">Créer un événement</a>
+        <a href="#list-events">Liste des événements</a>
+        <a href="#list-inscriptions">Liste des inscriptions</a>
+    </div>
+
+    <!-- Contenu principal -->
+    <div id="content">
     <h1>Gestion des événements</h1>
 
     <!-- Formulaire pour créer de nouveaux événements -->
-    <form action="admin.php" method="post" enctype="multipart/form-data"> 
+    <form id="form" action="admin.php" method="post" enctype="multipart/form-data"> 
         <label for="titre">Titre :</label>
         <input type="text" name="titre" required>
 
@@ -117,20 +206,19 @@ if (!$resultInscriptions) {
         <button type="submit">Créer un événement</button>
     </form>
 
-    <!-- Liste des événements existants avec des liens pour les éditer ou les supprimer -->
-    <h2>Liste des événements existants</h2>
-    <ul>
-        <?php
-        while ($rowEvenement = mysqli_fetch_assoc($resultEvenements)) {
-            echo "<li>";
-            echo "{$rowEvenement['titre']} ({$rowEvenement['date_debut']}) - <a href='edit_event.php?id={$rowEvenement['id_evenement']}'>Éditer</a> | <a href='delete_event.php?id={$rowEvenement['id_evenement']}'>Supprimer</a>";
-            echo "</li>";
-        }
-        ?>
-    </ul>
+    <h2 id="list-events">Liste des événements existants</h2>
+        <ul>
+            <?php
+            while ($rowEvenement = mysqli_fetch_assoc($resultEvenements)) {
+                echo "<li>";
+                echo "{$rowEvenement['titre']} ({$rowEvenement['date_debut']}) - <a href='edit_event.php?id={$rowEvenement['id_evenement']}'>Éditer</a> | <a href='delete_event.php?id={$rowEvenement['id_evenement']}'>Supprimer</a>";
+                echo "</li>";
+            }
+            ?>
+        </ul>
 
     <!-- Liste des inscriptions existantes -->
-    <h2>Liste des inscriptions</h2>
+    <h2 id="list-inscriptions">Liste des inscriptions</h2>
     <ul>
         <?php
         while ($rowInscription = mysqli_fetch_assoc($resultInscriptions)) {
@@ -140,6 +228,37 @@ if (!$resultInscriptions) {
         }
         ?>
     </ul>
+    <!-- Liste des demandes d'événements -->
+<!-- Liste des demandes d'événements -->
+<h2>Liste des demandes d'événements</h2>
+<ul>
+    <?php
+    // Récupérer la liste des demandes depuis la base de données
+    $queryDemandes = "SELECT demande.*, demandeur.Nom AS nom_demandeur, demandeur.prenom AS prenom_demandeur
+                      FROM demande
+                      JOIN demandeur ON demande.id_demandeur = demandeur.id_demandeur";
+    $resultDemandes = mysqli_query($link, $queryDemandes);
+
+    // Vérifier les erreurs de la requête
+    if (!$resultDemandes) {
+        die("Erreur de la requête pour les demandes : " . mysqli_error($link));
+    }
+
+    while ($rowDemande = mysqli_fetch_assoc($resultDemandes)) {
+        echo "<li>";
+        echo "<strong>{$rowDemande['titre']}</strong> ({$rowDemande['date_debut']}) - ";
+        echo "Demandeur: {$rowDemande['nom_demandeur']} {$rowDemande['prenom_demandeur']} - ";
+        echo "Lieu: {$rowDemande['lieu']} - Createur: {$rowDemande['createur']} -";
+        echo "Infos: {$rowDemande['description']} <br>";
+        echo "<a href='approuver_demande.php?id={$rowDemande['id_demande']}'>Approuver</a> | <a href='delete_demande.php?id={$rowDemande['id_demande']}'>Supprimer</a>";
+        echo "</li>";
+    }
+
+    // Libérer le résultat de la requête des demandes
+    mysqli_free_result($resultDemandes);
+    ?>
+</ul>
+
 
 
 
