@@ -30,7 +30,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <style>
     body {
-        padding-top: 23px;
+      
         font-family: "Nunito";
     }
 
@@ -172,10 +172,13 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
             display: flex;
             flex-direction: column;
         }
+    
 
     }
+
 </style>
 
+</style>
 </head>
 <body>
 <!-- Barre de Navigation -->
@@ -213,17 +216,18 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
     <input class="form-control ml-3 me-2" type="search" id="searchInput" placeholder="Search" aria-label="Search">
     <button class="btn btn-success btn-info mr-3 ml-3 btn-search" type="button" onclick="performSearch()"> Search </button>
 </form>
+
+
     </div>
   </div>
-</nav>
-<br><br>
-  
+</nav><br>
+<div>
     <a name="event1"><h2><div id="table">
         <div id="centeralign">
           <h1>Forum ENSAK-Entreprises de kenitra</h1>
           <h3>L'unique Forum ENSAK-Entreprises De Kenitra refait surface pour une 7ème édition .</h3>
         </div>
-      </div> </h2></a>
+      </h2></a></div>
     <img src="photo/WhatsApp Image 2023-12-09 at 23.16.44_9d323da0.jpg" class="img-fluid" alt="..."><br><br>
     <div id="parag">Le forum ENSAK Entreprises ouvre ses portes, pour la 7ème année consécutive, le Mercredi 29 Novembre 2023 à
         l'École Nationale des Sciences Appliquées de Kenitra. Cet événement phare sera sous le thème de « La révolution
@@ -245,51 +249,90 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
         En définitive, il est à retenir que le forum est ouvert au grand public et que toute personne intéressée d'y assister
         sera la bienvenue. Nous comptons vivement sur votre présence.
     </div>
-    <div  class="contain"><div class="container">
-        <div class="box">
-          <div class="imgBx">
-            <img src="photo/IMG-20231210-WA0002.jpg">
-          </div>
-        </div>
-        <div class="box">
-          <div class="imgBx">
-            <img src="photo/WhatsApp Image 2023-12-09 at 20.53.09_ed12dfe1.jpg">
-          </div>
-        </div>
-        <div class="box">
-          <div class="imgBx">
-            <img src="photo/IMG-20231210-WA0003.jpg">
-          </div>
-        </div>
-        <div class="box">
-          <div class="imgBx">
-            <img src="photo/IMG-20231210-WA0007.jpg">
-          </div>
-        </div>
-        <div class="box">
-            <div class="imgBx">
-              <img src="photo/IMG-20231209-WA0051.jpg">
+
+    <div class="container mt-5">
+    <div class="row">
+        <!-- Card 1 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="photo/IMG-20231210-WA0002.jpg" class="card-img-top" alt="Projet 1">
+                <div class="card-body">
+                    <h5 class="card-title">image 1</h5>
+                    <p class="card-text">Description for image 1.</p>
+                    <!-- Add more content or buttons as needed -->
+                </div>
             </div>
-            <div class="content">
-              <div>
-                </p>
-              </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="photo/WhatsApp Image 2023-12-09 at 20.53.09_ed12dfe1.jpg" class="card-img-top" alt="Projet 2">
+                <div class="card-body">
+                    <h5 class="card-title">image 2</h5>
+                    <p class="card-text">Description for image 2.</p>
+                    <!-- Add more content or buttons as needed -->
+                </div>
             </div>
-          </div>
-          <div class="box">
-            <div class="imgBx">
-              <img src="photo/IMG-20231210-WA0001.jpg">
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="photo/IMG-20231210-WA0003.jpg" class="card-img-top" alt="Projet 3">
+                <div class="card-body">
+                    <h5 class="card-title">image 3</h5>
+                    <p class="card-text">Description for image 3.</p>
+                    <!-- Add more content or buttons as needed -->
+                </div>
             </div>
-            <div class="content">
-              <div>
-                </p>
-              </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <!-- Card 4 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="photo/IMG-20231210-WA0007.jpg" class="card-img-top" alt="Projet 4">
+                <div class="card-body">
+                    <h5 class="card-title">image 4</h5>
+                    <p class="card-text">Description for image 4.</p>
+                    <!-- Add more content or buttons as needed -->
+                </div>
             </div>
-          </div>
-      </div></div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="photo/IMG-20231209-WA0051.jpg" class="card-img-top" alt="Projet 5">
+                <div class="card-body">
+                    <h5 class="card-title">image 5</h5>
+                    <p class="card-text">Description for image 5.</p>
+                    <!-- Add more content or buttons as needed -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="photo/IMG-20231210-WA0046.jpg" class="card-img-top" alt="Projet 6">
+                <div class="card-body">
+                    <h5 class="card-title">image 6</h5>
+                    <p class="card-text">Description for image 6.</p>
+                    <!-- Add more content or buttons as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-bzHQLOwk54r1HleP7b8L+LUGUNBhEuDBXFv8W/BrNJ6+8IRb/td2YTC9wTjZFS3" crossorigin="anonymous"></script>
       <h3>Retour en images sur la 7ème édition du Forum Ensak Entreprises. Des rencontres enrichissantes, des échanges passionnants et des opportunités prometteuses ont marqué cette journée mémorable</h3>
       <video width="800Px" height="600PX" src="photo/WhatsApp Video 2023-12-10 at 00.32.41_b328c87d.mp4" controls="controls" poster="photo/WhatsApp Image 2023-12-10 at 00.37.02_502d769d.jpg" type="video1/mp4"></video><br><br>
-</div>
+
 
 <a name="event2"><h2>
   <div id="table">
@@ -301,32 +344,82 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
 </a><br><br>
 <img src="photo/WhatsApp Image 2023-12-09 at 00.58.09_e7242900.jpg" width="600PX" height="600PX" alt="..."><br><br>
 <h2>M. Riad Mazur, Ministre de l'Industrie et du Commerce, a participé, le 09 mai 2022, au séminaire organisé par le Club Mécatronique de l'Ecole Nationale des Sciences Appliquées de Kénitra, à l'occasion de la Journée Nationale de la Mécatronique sous le thème : « Nouveau modèle de formation d'ingénieur pour un nouveau modèle industriel »</h2>
-      <section id="Offres" >
-              <div class="bloc"> 
-                  <div class="cartes"> 
-                      <img src="photo/IMG-20231210-WA0009.jpg" class="icones" alt="vidéo de présentation par topovideo" >
-      
-                  </div>
-                  <div class="cartes"> 
-                      <img src="photo/IMG-20231210-WA0011.jpg" class="icones"  alt="vidéo de formation par topovideo" >
-                     
-                  </div>
-                  <div class="cartes"> 
-                      <img src="photo/IMG-20231210-WA0009.jpg" class="icones"  alt="Vidéo RH" / >
-                      
-                  </div>
-                  <div class="cartes"> 
-                      <img src="photo/IMG-20231210-WA0006.jpg" class="icones"  alt="Vidéo Tutoriel" />
-                     
-                  </div>
-                  <div class="cartes"> 
-                      <img src="photo/IMG-20231210-WA0013.jpg" class="icones"  alt="Snack content" />
-                     
-                  </div>
-                  <div class="cartes"> 
-                      <img src="photo/IMG-20231210-WA0012.jpg" class="icones"  alt="Vidéo teaser" />
-                     
-                  </div>
+   
+<div class="container mt-5">
+    <div class="row">
+        <!-- Card 1 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="photo/IMG-20231210-WA0009.jpg" class="card-img-top" alt="vidéo de présentation par topovideo">
+                <div class="card-body">
+               
+                    <!-- Add any additional content here if needed -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="photo/IMG-20231210-WA0011.jpg" class="card-img-top" alt="vidéo de formation par topovideo">
+                <div class="card-body">
+                    
+                    <!-- Add any additional content here if needed -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="photo/IMG-20231210-WA0009.jpg" class="card-img-top" alt="Vidéo RH">
+                <div class="card-body">
+                   
+                    <!-- Add any additional content here if needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+
+
+    <div class="col-md-4">
+            <div class="card">
+                <img src="photo/IMG-20231210-WA0013.jpg"  width="200px" height="250PX" class="card-img-top" alt="Snack content">
+                <div class="card-body">
+                    
+                    <!-- Add any additional content here if needed -->
+                </div>
+            </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="photo/IMG-20231210-WA0006.jpg" class="card-img-top" alt="Vidéo Tutoriel">
+                <div class="card-body">
+                  
+                    <!-- Add any additional content here if needed -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+   
+
+        <!-- Card 6 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="photo/IMG-20231210-WA0012.jpg" width="200px" height="250PX" class="card-img-top" alt="Vidéo teaser">
+                <div class="card-body">
+                    
+                    <!-- Add any additional content here if needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
   
               </div>
@@ -341,38 +434,67 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                   </div>
                 </div> </h2>
           </a><br><br>
-                <img src="photo/IMG-20231210-WA0032.jpg" width="600PX" height="600PX" alt="..."><br>
-                <div  class="contain"><div class="container">
-                  <div class="box">
-                    <div class="imgBx">
-                      <img src="photo/IMG-20231210-WA0028.jpg">
-                    </div>
-                  </div>
-                  <div class="box">
-                    <div class="imgBx">
-                      <img src="photo/IMG-20231210-WA0035.jpg">
-                    </div>
-                  </div>
-                  <div class="box">
-                    <div class="imgBx">
-                      <img src="photo/IMG-20231210-WA0030.jpg">
-                    </div>
-                  </div>
-                  <div class="box">
-                    <div class="imgBx">
-                      <img src="photo/IMG-20231210-WA0029.jpg">
-                    </div>
-                  </div>
-                  <div class="box">
-                      <div class="imgBx">
-                        <img src="photo/IMG-20231210-WA0033.jpg">
-                      </div>
-                    </div>
-                    <div class="box">
-                      <div class="imgBx">
-                        <img src="photo/IMG-20231210-WA0034.jpg">
-                      </div>
-                    </div> <br>
+                <img src="photo/IMG-20231210-WA0032.jpg" width="600PX" height="600PX" alt="..."><br><br><br>
+                <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="photo/IMG-20231210-WA0028.jpg" class="card-img-top" alt="Image 1">
+                <div class="card-body">
+                    <!-- Content for Box 1 -->
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <img src="photo/IMG-20231210-WA0035.jpg" class="card-img-top" alt="Image 2">
+                <div class="card-body">
+                    <!-- Content for Box 2 -->
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <img src="photo/IMG-20231210-WA0030.jpg" class="card-img-top" alt="Image 3">
+                <div class="card-body">
+                    <!-- Content for Box 3 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="photo/IMG-20231210-WA0029.jpg" class="card-img-top" alt="Image 4">
+                <div class="card-body">
+                    <!-- Content for Box 4 -->
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <img src="photo/IMG-20231210-WA0033.jpg" class="card-img-top" alt="Image 5">
+                <div class="card-body">
+                    <!-- Content for Box 5 -->
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <img src="photo/IMG-20231210-WA0034.jpg" class="card-img-top" alt="Image 6">
+                <div class="card-body">
+                    <!-- Content for Box 6 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <br>
                     <h3>crer.ensak Le club Robotique et Energies Renouvelables est fier de vous annoncer l'organisation de la 6ème édition de la journée nationale des systèmes embarqués, sous le thème << La digitalisation et l'IA: Quel futur pour le Maroc >> qui se tiendra le Mercredi 10 Mai 2023 à l'École Nationale des Science Appliqués de Kénitra
                      Cet événement mettra en lumière l'importance de la digitalisation qui est considérée aujourd'hui comme la quatrième révolution industrielle au niveau mondial.
           
@@ -442,6 +564,90 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
             <h2>La vidéo complète qui résume nos efforts et nos accomplissement pendant la caravane humanitaire Al Amal 5</h2>
             <video width="800Px" height="600PX" src="photo/WhatsApp Video 2023-12-10 at 18.35.46_a1129b5f.mp4" controls="controls" poster="photo/IMG-20231210-WA0045.jpg" type="video1/mp4"></video><br><br>
               </div>
+              <a name="event5"><h2>
+          <div id="table">
+                <div id="centeralign">
+                  <h1>صدى الوحي لتجويد القرءان الكريم</h1>
+                  <h3>club afaaq </h3>
+                </div>
+              </div> </h2></a><br><br> 
+              <img src="photo/afaq.jpg" width="600PX" height="600PX" alt="..."><br><br><br>
+              <div id="parag">لله الحمد و المنة من قبل و من بعد
+بفضل و منة من الله عز وجل ، يعلن نادي آفاق بشراكة مع 17 مدرسة و معهد على ربوع المملكة، عن انطلاقة مسابقة التجويد الوطنية صدى الوحي
+و بذلك يتحقق حلم طالت مسيرته ... فشاء الله له أن يكون بعد سنة كاملة من التخطيط ..
+حلم أن تجتمع نواد عدة حول هدف واحد .. و أن تحقق ما لم يسبقهم أحد إليه ..
+أن نجعل طلبة ذوي تخصصات علمية بحتة يتنافسون و ينكبون على طلب العلمي الشرعي و تدارس قواعد التجويد ...
+و ها قد آن الأوان لله الحمد و الشكر .. لنعلن عن الانطلاقة الفعلية لمسابقة التجويد الوطنية صدى الوحي
+سائلين من المولى عز وجل التوفيق و السداد
+بوركت الهمم و سدد الله الخطى
+
+    </div>
+    <div class="container mt-5">
+                <div class="row">
+                    <!-- Projet 1 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="photo/IMG-20240112-WA0019.jpg" class="card-img-top" alt="Projet 1">
+                          
+                        </div>
+                    </div>
+            
+                    <!-- Projet 2 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="photo/IMG-20240112-WA0021.jpg" class="card-img-top" alt="Projet 2">
+                            
+                        </div>
+                    </div>
+            
+                    <!-- Projet 3 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="photo/IMG-20240112-WA0022.jpg" class="card-img-top" alt="Projet 3">
+                           
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row mt-4">
+                    <!-- Projet 4 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="photo/afaq1.jpg" class="card-img-top" alt="Projet 4">
+                            
+                        </div>
+                    </div>
+            
+                    <!-- Projet 5 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="photo/IMG-20240112-WA0020.jpg" class="card-img-top" alt="Projet 5">
+                            
+                        </div>
+                    </div>
+            
+                    <!-- Projet 6 -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="photo/IMG-20240112-WA0017.jpg" class="card-img-top" alt="Projet 6">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <footer class="footer mt-5 mb-5 text-white" style="background-color: #22427C; padding: 20px;">
     <div class="container">
         <div class="row">

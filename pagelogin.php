@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Slide Navbar</title>
-	<link rel="stylesheet" type="text/css" href="pagelogin.css">
+	<link rel="stylesheet"  href="login.css">
 </head>
 <?php
 session_start();

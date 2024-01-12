@@ -53,7 +53,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
 
 <style>
     body {
-        padding-top: 23px;
+      
         font-family: "Nunito";
     }
 

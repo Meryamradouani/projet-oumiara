@@ -1,5 +1,5 @@
 body {
-    background-image: url('photo/knz.jpg');
+    background-image: url('photo/ken.png');
     background-size: cover;
     margin: 0;
     padding: 10px;
@@ -12,14 +12,14 @@ body {
 
 
 .main {
-    background-color: #dff2ff;
+    background-color:#dff2ff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 80px;
     width: 400px;
     text-align: center;
     height: 300px;
-    margin-left: auto; /* Aligner à droite */
+
 }
 
 form {
