@@ -83,24 +83,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             box-sizing: border-box;
         }
 
-        input[type="submit"] {
-            width: 100%;
-            background-color: #22427C;
-            color: #fff;
-            padding: 14px 20px;
-            margin-bottom: 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+        input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 10px; /* Ajustez la marge en bas selon vos besoins */
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
         input[type="submit"]:hover {
             background-color: lightblue;
         }
 
     .container1{
-            background-image: url('photo/ken.png');
-            background-size: cover;
+            background-image: url('photo/demende.jpg');
+            background-size: 1000PX;
+            background-repeat: no-repeat; 
             margin: 0;
             padding: 90px;
             display: flex;
@@ -229,8 +230,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 <nav class="navbar navbar-expand-lg ">
-  <div class="container-fluid">
-    <a class="mr-3" href="index.php"><img src="ensak-logo.png" width="120PX" bheight="100px" alt="logo"></a>
+  <div class="container-fluid">   
+     <a class="mr-3" href="index.php"><img src="photo/ensak.png" width="165PX" bheight="150px" alt="logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

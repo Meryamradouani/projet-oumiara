@@ -184,7 +184,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
 <!-- Barre de Navigation -->
 <nav class="navbar navbar-expand-lg ">
   <div class="container-fluid">
-    <a class="mr-3" href="index.php"><img src="ensak-logo.png" width="120PX" bheight="100px" alt="logo"></a>
+  <a class="mr-3" href="index.php"><img src="photo/ensak.png" width="165PX" bheight="150px" alt="logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
