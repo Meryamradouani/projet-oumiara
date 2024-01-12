@@ -87,7 +87,7 @@ mysqli_close($link);
 </head>
 <body> 
     <h1>Inscription à un Événement</h1>
-
+<fieldset>
     <form action="" method="POST" id="form" enctype="multipart/form-data">
         <?php
         // Ajoutez un champ caché pour stocker l'ID de l'événement
@@ -109,7 +109,7 @@ mysqli_close($link);
             <option value="professeur">PROFESSEUR</option>
         </select><br><br>
         <input type="submit" name="submit" value="S'inscrire" style="width: 208px;text-align: center; height:30px;"/>
-    </form>     
+    </form> </fieldset>    
 </body>
 </html>
 
