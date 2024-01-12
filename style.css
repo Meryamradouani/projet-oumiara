@@ -12,7 +12,7 @@
 
 }
 #header{
-    background-color: rgb(135, 208, 222);
+    background-color:#dff2ff;
 }
 
 #header .nav-item :hover{
@@ -58,13 +58,7 @@ margin: 6PX;
     text-align:center ;
     margin-left: 0;
 }
- .footer
- {
-   background-image:url("http://www.uq.edu.au/studyabroad/studentblogs/wp-content/uploads/2018/03/conclusion.pngMce_.c6yDVBNGgP.png.pagespeed.ce_.c6yDVBNGgP.png");
-   background-position: bottom;
-   background-repeat: no-repeat;
-   background-size: contain;  
- }
+
 
 
 body {

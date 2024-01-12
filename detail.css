@@ -179,22 +179,7 @@ body{
     height: 250PX;
     width: 300PX;
 }
-#header a{
-  color: white;
-  font-weight: bold;
 
-}
-#header{
-    background-color: rgb(135, 208, 222);
 
-}
-
-.footer
-{
-  background-image:url("http://www.uq.edu.au/studyabroad/studentblogs/wp-content/uploads/2018/03/conclusion.pngMce_.c6yDVBNGgP.png.pagespeed.ce_.c6yDVBNGgP.png");
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: contain;  
-}
 
 
