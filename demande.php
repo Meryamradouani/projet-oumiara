@@ -11,8 +11,6 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
 } else {
     $showLoginButton = true;
     $showLogoutButton = false;
-
- 
 }
 }
 include('connexion.php');

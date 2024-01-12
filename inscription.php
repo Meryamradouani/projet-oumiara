@@ -303,8 +303,6 @@ mysqli_close($link);
         <input type="text" name="NOM" required="required"/><br>
         <label for="prenom">PRENOM :</label>
         <input type="text" name="PRENOM" required="required"/><br>
-        <label for="log">LOGIN:</label>
-        <input type="text" name="LOGIN" required="required"/><br>
         <label for="nom">E-MAIL:</label>
         <input type="text" name="MAIL" required="required"/><br>
         <label for="font">FONCTIONNALITE:</label>
