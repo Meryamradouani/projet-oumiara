@@ -2,8 +2,7 @@
 <html>
 <head>
 	<title>Slide Navbar</title>
-	<link rel="stylesheet" type="text/css" href="login.css">
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="pagelogin.css">
 </head>
 <?php
 session_start();
@@ -31,8 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <body>
-	<div class="main">  	
-		<input type="checkbox" id="chk" aria-hidden="true">
+	<div class="main">  
 
 			<div class="signup">
 				<form action="" method="POST">
