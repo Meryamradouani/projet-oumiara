@@ -240,22 +240,14 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul class="navbar-nav d-flex w-100 justify-content-center">
         <li class="ml-3">
-          <a href="club.php"class="nav-link white bgcolor:white  mr-3">Club</a>
+          <a href="club.php"class="btn btn-success btn-info nav-link white bgcolor:white  mr-3">Club</a>
         </li>
         <li class="ml-3">
-          <a href="event.php" class="nav-link mr-3">Evénement</a>
+          <a href="event.php" class="btn btn-success btn-info nav-link mr-3">Evénement</a>
         </li>
         <li class="ml-3">
-<<<<<<< HEAD
-          <a href="demande.php" class="nav-link mr-3">ajouter Evénement</a>
-=======
-          <a href="event.php" class="btn btn-success btn-info mr-3">Evénement</a>
+          <a href="demande.php" class="btn btn-success btn-info nav-link mr-3">ajouter Evénement</a>
         </li>
-        <li class="ml-3">
-          <a href="demandeur.php" class="btn btn-success btn-info mr-3">ajouter Evénement</a>
->>>>>>> fad018ffd4468b28b3feb60f190f55dd1d0d725e
-        </li>
-
         <?php if (isset($showLoginButton) && $showLoginButton): ?>
           <li class="ml-3">
           <a href="pagelogin.php" class="btn btn-success btn-info mr-3 btn-login">login</a>

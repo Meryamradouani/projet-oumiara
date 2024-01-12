@@ -178,43 +178,43 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-        <a class="mr-3" href="index.php"><img src="ensak-logo.png" width="120PX" bheight="100px" alt="logo"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav d-flex w-100 justify-content-center">
-                <li class="ml-3">
-                    <a href="club.php" class="nav-link white bgcolor:white  mr-3">Club</a>
-                </li>
-                <li class="ml-3">
-                    <a href="event.php" class="nav-link mr-3">Événement</a>
-                </li>
-                <li class="ml-3">
-                    <a href="demande.php" class="nav-link mr-3">Ajouter Événement</a>
-                </li>
+<!-- Barre de Navigation -->
+<nav class="navbar navbar-expand-lg ">
+  <div class="container-fluid">
+    <a class="mr-3" href="index.php"><img src="ensak-logo.png" width="120PX" bheight="100px" alt="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav d-flex w-100 justify-content-center">
+        <li class="ml-3">
+          <a href="club.php"class="btn btn-success btn-info nav-link white bgcolor:white  mr-3">Club</a>
+        </li>
+        <li class="ml-3">
+          <a href="event.php" class="btn btn-success btn-info nav-link mr-3">Evénement</a>
+        </li>
+        <li class="ml-3">
+          <a href="demande.php" class="btn btn-success btn-info nav-link mr-3">ajouter Evénement</a>
+        </li>
+        <?php if (isset($showLoginButton) && $showLoginButton): ?>
+          <li class="ml-3">
+          <a href="pagelogin.php" class="btn btn-success btn-info mr-3 btn-login">login</a>
+          </li>
+        <?php endif; ?>
 
-                <?php if (isset($showLoginButton) && $showLoginButton): ?>
-                    <li class="ml-3">
-                        <a href="login.php" class="btn btn-success btn-info ml-3 mr-3 btn-login">Login</a>
-                    </li>
-                <?php endif; ?>
-
-                <?php if (isset($showLogoutButton) && $showLogoutButton): ?>
-                    <li class="ml-3">
-                        <a href="logout.php" class="btn btn-success btn-info mr-3 ml-3 btn-logout">Déconnexion</a>
-                    </li>
-                <?php endif; ?>
-            </ul>
-            <!-- Update your search form with this -->
-            <form class="d-flex" role="search">
-                <input class="form-control ml-3 me-2" type="search" id="searchInput" placeholder="Search" aria-label="Search">
-                <button class="btn btn-success btn-info mr-3 ml-3 btn-search" type="button" onclick="performSearch()">Search</button>
-            </form>
-        </div>
+        <?php if (isset($showLogoutButton) && $showLogoutButton): ?>
+          <li class="ml-3">
+          <a href="logout.php" class="btn btn-success btn-info mr-3 ml-3 btn-logout">Déconnexion</a>
+          </li>
+        <?php endif; ?>
+      </ul>
+      <!-- Update your search form with this -->
+<form class="d-flex" role="search">
+    <input class="form-control ml-3 me-2" type="search" id="searchInput" placeholder="Search" aria-label="Search">
+    <button class="btn btn-success btn-info mr-3 ml-3 btn-search" type="button" onclick="performSearch()"> Search </button>
+</form>
     </div>
+  </div>
 </nav>
 <br><br>
   
