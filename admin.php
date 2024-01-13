@@ -91,7 +91,7 @@ if (!$resultInscriptions) {
 <style>
     /* styles.css */ #left-menu {
             width: 200px;
-            background-color: #333;
+            background-color: #22427c;
             color: #fff;
             text-align: left;
             padding: 10px;
@@ -105,6 +105,7 @@ if (!$resultInscriptions) {
             color: #fff;
             text-decoration: none;
             margin-bottom: 10px;
+            font-size:20px;
         }
 
         #content {
@@ -114,14 +115,14 @@ if (!$resultInscriptions) {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #dff2ff;
     margin: 0;
     padding: 0;
     text-align:center;
 }
 
 h1, h2 {
-    color: #333;
+    color: #22427c;
 }
 
 form {
@@ -148,7 +149,7 @@ select {
 }
 
 button {
-    background-color: #4caf50;
+    background-color: #22427c;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -157,7 +158,8 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #dff2ff;
+    color:#22427c;
 }
 
 ul {
@@ -168,18 +170,78 @@ ul {
 li {
     margin-bottom: 10px;
 }
+/* Add these styles to your existing CSS or include them in your HTML style section */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #22427c;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+/* Additional styles for the event list */
+.event-list {
+    list-style: none;
+    padding: 0;
+}
+
+.event-list li {
+    margin-bottom: 15px;
+}
+
+.event-buttons {
+    display: inline-block;
+}
+
+.edit-button, .delete-button {
+    padding: 8px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-button {
+    background-color: #22427c;
+}
+
+.delete-button {
+    background-color: #e74c3c;
+}
+
+.edit-button:hover, .delete-button:hover {
+    background-color: #2980b9;
+}
+
+
 </style>
 <body>
 <div id="left-menu">
-        <a href="#form">Créer un événement</a>
-        <a href="#list-events">Liste des événements</a>
-        <a href="#list-inscriptions">Liste des inscriptions</a>
+        <br><br><a href="#form">Créer un événement</a><br><br><hr><br><br>
+        <a href="#list-events">Liste des événements</a><br><br><hr><br><br>
+        <a href="#list-inscriptions">Liste des inscriptions</a><br><br><hr><br><br>
+        <a href="#list-demandes">Liste des demandes d'evenements</a>
     </div>
 
     <!-- Contenu principal -->
     <div id="content">
-    <h1>Gestion des événements</h1>
+    <h1>Gestion des événements</h1><br><hr>
 
+<h2 id="form">Creer un evenement</h2>
     <!-- Formulaire pour créer de nouveaux événements -->
     <form id="form" action="admin.php" method="post" enctype="multipart/form-data"> 
         <label for="titre">Titre :</label>
@@ -205,32 +267,53 @@ li {
 
         <button type="submit">Créer un événement</button>
     </form>
+<br><br><br><br><br><br><br><br><br><br>
+   <!-- Updated HTML code for the list of existing events -->
+<hr>
+<h2 id="list-events">Liste des événements existants</h2>
+<ul class="event-list">
+    <?php
+    while ($rowEvenement = mysqli_fetch_assoc($resultEvenements)) {
+        echo "<li>";
+        echo "- {$rowEvenement['titre']} ({$rowEvenement['date_debut']}) ";
+        echo "<div class='event-buttons'>";
+        echo "<a class='edit-button' href='edit_event.php?id={$rowEvenement['id_evenement']}'>Éditer</a>"; echo" ";
+        echo "<a class='delete-button' href='delete_event.php?id={$rowEvenement['id_evenement']}'>Supprimer</a>";
+        echo "</div>";
+        echo "</li>";
+    }
+    ?>
+</ul>
 
-    <h2 id="list-events">Liste des événements existants</h2>
-        <ul>
-            <?php
-            while ($rowEvenement = mysqli_fetch_assoc($resultEvenements)) {
-                echo "<li>";
-                echo "{$rowEvenement['titre']} ({$rowEvenement['date_debut']}) - <a href='edit_event.php?id={$rowEvenement['id_evenement']}'>Éditer</a> | <a href='delete_event.php?id={$rowEvenement['id_evenement']}'>Supprimer</a>";
-                echo "</li>";
-            }
-            ?>
-        </ul>
-
+        <br><br><br><br><br><br><br><hr>
     <!-- Liste des inscriptions existantes -->
-    <h2 id="list-inscriptions">Liste des inscriptions</h2>
-    <ul>
+<h2 id="list-inscriptions">Liste des inscriptions</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Email</th>
+            <th>Événement</th>
+        </tr>
+    </thead>
+    <tbody>
         <?php
         while ($rowInscription = mysqli_fetch_assoc($resultInscriptions)) {
-            echo "<li>";
-            echo "{$rowInscription['nom']} {$rowInscription['prenom']} ({$rowInscription['email']}) s'est inscrit à l'événement '{$rowInscription['titre_evenement']}'";
-            echo "</li>";
+            echo "<tr>";
+            echo "<td>{$rowInscription['nom']}</td>";
+            echo "<td>{$rowInscription['prenom']}</td>";
+            echo "<td>{$rowInscription['email']}</td>";
+            echo "<td>{$rowInscription['titre_evenement']}</td>";
+            echo "</tr>";
         }
         ?>
-    </ul>
-    <!-- Liste des demandes d'événements -->
+    </tbody>
+</table>
+<br><br><br><br><br><br><br><hr>
+
 <!-- Liste des demandes d'événements -->
-<h2>Liste des demandes d'événements</h2>
+<h2 id="list-demandes">Liste des demandes d'événements</h2>
 <ul>
     <?php
     // Récupérer la liste des demandes depuis la base de données
@@ -257,7 +340,7 @@ li {
     // Libérer le résultat de la requête des demandes
     mysqli_free_result($resultDemandes);
     ?>
-</ul>
+</ul><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 
