@@ -273,7 +273,7 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
 
     </div>
   </div>
-</nav>
+</nav> <br><br><br>
 <div class="container mt-5">
     
      <?php
