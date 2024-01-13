@@ -270,7 +270,7 @@ tr:hover {
 <br><br><br><br><br><br><br><br><br><br>
    <!-- Updated HTML code for the list of existing events -->
 <hr>
-<h2 id="list-events">Liste des événements existants</h2>
+<h2 id="list-events">Liste des événements existants</h2><br>
 <ul class="event-list">
     <?php
     while ($rowEvenement = mysqli_fetch_assoc($resultEvenements)) {
@@ -280,14 +280,14 @@ tr:hover {
         echo "<a class='edit-button' href='edit_event.php?id={$rowEvenement['id_evenement']}'>Éditer</a>"; echo" ";
         echo "<a class='delete-button' href='delete_event.php?id={$rowEvenement['id_evenement']}'>Supprimer</a>";
         echo "</div>";
-        echo "</li>";
+        echo "</li>";echo" <br>";
     }
     ?>
 </ul>
 
         <br><br><br><br><br><br><br><hr>
     <!-- Liste des inscriptions existantes -->
-<h2 id="list-inscriptions">Liste des inscriptions</h2>
+<h2 id="list-inscriptions">Liste des inscriptions</h2><br>
 <table border="1">
     <thead>
         <tr>
