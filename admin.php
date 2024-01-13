@@ -234,7 +234,8 @@ tr:hover {
         <br><br><a href="#form">Créer un événement</a><br><br><hr><br><br>
         <a href="#list-events">Liste des événements</a><br><br><hr><br><br>
         <a href="#list-inscriptions">Liste des inscriptions</a><br><br><hr><br><br>
-        <a href="#list-demandes">Liste des demandes d'evenements</a>
+        <a href="#list-demandes">Liste des demandes d'evenements</a><br><br><hr><br><br>
+        <a href="index.php">Retour a l'acceuil</a>
     </div>
 
     <!-- Contenu principal -->
