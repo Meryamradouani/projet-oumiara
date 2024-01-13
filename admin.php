@@ -205,7 +205,7 @@ tr:hover {
     display: inline-block;
 }
 
-.edit-button, .delete-button {
+.edit-button, .delete-button ,.approuver-button,.deleted-button{
     padding: 8px;
     margin-left: 10px;
     text-decoration: none;
@@ -215,11 +215,11 @@ tr:hover {
     cursor: pointer;
 }
 
-.edit-button {
+.edit-button ,.approuver-button{
     background-color: #22427c;
 }
 
-.delete-button {
+.delete-button ,.deleted-button{
     background-color: #e74c3c;
 }
 
@@ -313,33 +313,55 @@ tr:hover {
 <br><br><br><br><br><br><br><hr>
 
 <!-- Liste des demandes d'événements -->
+<!-- Liste des demandes d'événements -->
 <h2 id="list-demandes">Liste des demandes d'événements</h2>
-<ul>
-    <?php
-    // Récupérer la liste des demandes depuis la base de données
-    $queryDemandes = "SELECT demande.*, demandeur.Nom AS nom_demandeur, demandeur.prenom AS prenom_demandeur
-                      FROM demande
-                      JOIN demandeur ON demande.id_demandeur = demandeur.id_demandeur";
-    $resultDemandes = mysqli_query($link, $queryDemandes);
+<table border="1">
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Date de début</th>
+            <th>Demandeur</th>
+            <th>Lieu</th>
+            <th>Créateur</th>
+            <th>Infos</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        // Récupérer la liste des demandes depuis la base de données
+        $queryDemandes = "SELECT demande.*, demandeur.Nom AS nom_demandeur, demandeur.prenom AS prenom_demandeur
+                          FROM demande
+                          JOIN demandeur ON demande.id_demandeur = demandeur.id_demandeur";
+        $resultDemandes = mysqli_query($link, $queryDemandes);
 
-    // Vérifier les erreurs de la requête
-    if (!$resultDemandes) {
-        die("Erreur de la requête pour les demandes : " . mysqli_error($link));
-    }
+        // Vérifier les erreurs de la requête
+        if (!$resultDemandes) {
+            die("Erreur de la requête pour les demandes : " . mysqli_error($link));
+        }
 
-    while ($rowDemande = mysqli_fetch_assoc($resultDemandes)) {
-        echo "<li>";
-        echo "<strong>{$rowDemande['titre']}</strong> ({$rowDemande['date_debut']}) - ";
-        echo "Demandeur: {$rowDemande['nom_demandeur']} {$rowDemande['prenom_demandeur']} - ";
-        echo "Lieu: {$rowDemande['lieu']} - Createur: {$rowDemande['createur']} -";
-        echo "Infos: {$rowDemande['description']} <br>";
-        echo "<a href='approuver_demande.php?id={$rowDemande['id_demande']}'>Approuver</a> | <a href='delete_demande.php?id={$rowDemande['id_demande']}'>Supprimer</a>";
-        echo "</li>";
-    }
+        while ($rowDemande = mysqli_fetch_assoc($resultDemandes)) {
+            echo "<tr>";
+            echo "<td>{$rowDemande['titre']}</td>";
+            echo "<td>{$rowDemande['date_debut']}</td>";
+            echo "<td>{$rowDemande['nom_demandeur']} {$rowDemande['prenom_demandeur']}</td>";
+            echo "<td>{$rowDemande['lieu']}</td>";
+            echo "<td>{$rowDemande['createur']}</td>";
+            echo "<td>{$rowDemande['description']}</td>";
+            echo "<td>";
+            echo "<a class='approuver-button' href='approuver_demande.php?id={$rowDemande['id_demande']}'>Approuver</a> | ";
+            echo "<a class='deleted-button' href='delete_demande.php?id={$rowDemande['id_demande']}'>Supprimer</a>";
+            echo "</td>";
+            echo "</tr>";
+        }
 
-    // Libérer le résultat de la requête des demandes
-    mysqli_free_result($resultDemandes);
-    ?>
+        // Libérer le résultat de la requête des demandes
+        mysqli_free_result($resultDemandes);
+        ?>
+    </tbody>
+</table>
+
+
 </ul><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
