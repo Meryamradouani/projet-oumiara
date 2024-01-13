@@ -16,7 +16,7 @@ if(isset($_POST['submit'])){
 		if(!is_uploaded_file($temp_name)){
 		exit("le fichier est untrouvable");
 		}
-		if ($_FILES['fichier']['size'] >= 1000000){
+		if ($_FILES['fichier']['size'] >= 10000000){
 			exit("Erreur, le fichier est volumineux");
 		}
 		$infosfichier = pathinfo($_FILES['fichier']['name']);

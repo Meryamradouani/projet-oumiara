@@ -350,7 +350,7 @@ tr:hover {
             echo "<td>{$rowDemande['createur']}</td>";
             echo "<td>{$rowDemande['description']}</td>";
             echo "<td>";
-            echo "<a class='approuver-button' href='approuver_demande.php?id={$rowDemande['id_demande']}'>Approuver</a> | ";
+            echo "<a class='approuver-button' href='approuver_demande.php?id={$rowDemande['id_demande']}'>Approuver</a>";
             echo "<a class='deleted-button' href='delete_demande.php?id={$rowDemande['id_demande']}'>Supprimer</a>";
             echo "</td>";
             echo "</tr>";

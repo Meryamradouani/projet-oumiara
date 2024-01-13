@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 12, 2024 at 02:31 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Hôte : 127.0.0.1
+-- Généré le : sam. 13 jan. 2024 à 12:24
+-- Version du serveur : 10.4.28-MariaDB
+-- Version de PHP : 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `gestion`
+-- Base de données : `gestion`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `commentaire`
+-- Structure de la table `commentaire`
 --
 
 CREATE TABLE `commentaire` (
@@ -37,7 +37,7 @@ CREATE TABLE `commentaire` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `demande`
+-- Structure de la table `demande`
 --
 
 CREATE TABLE `demande` (
@@ -46,26 +46,25 @@ CREATE TABLE `demande` (
   `date_fin` date NOT NULL,
   `lieu` varchar(100) NOT NULL,
   `titre` varchar(100) NOT NULL,
-  `description` varchar(100) NOT NULL,
-  `photo` blob NOT NULL,
-  `id_demandeur` int(11) NOT NULL
+  `description` varchar(1000) NOT NULL,
+  `photo` varchar(1000) NOT NULL,
+  `id_demandeur` int(11) NOT NULL,
+  `createur` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `demande`
+-- Déchargement des données de la table `demande`
 --
 
-INSERT INTO `demande` (`id_demande`, `date_debut`, `date_fin`, `lieu`, `titre`, `description`, `photo`, `id_demandeur`) VALUES
-(22, '2023-02-03', '2034-02-05', 'kenitra', 'nioua oumayma', 'sdwcjn', 0x6e696f7561206f756d61796d612e706e67, 2),
-(23, '2035-03-05', '2034-02-05', 'kenitra', 'AYOUB NIOUA', 'sdwcjn', 0x41594f5542204e494f55412e706e67, 2),
-(24, '4444-12-31', '4444-03-31', 'kenitra', 'AYOUB NIOUA', 'sdwcjn', 0x41594f5542204e494f55412e706e67, 2),
-(25, '0003-03-31', '3333-03-31', 'kenitra', 'AYOUB NIOUA', 'sdwcjn', 0x312e706e67, 2),
-(26, '4444-02-04', '4444-03-31', 'kn', 'forum', 'djsdh', 0x666f72756d2e706e67, 9);
+INSERT INTO `demande` (`id_demande`, `date_debut`, `date_fin`, `lieu`, `titre`, `description`, `photo`, `id_demandeur`, `createur`) VALUES
+(60, '2024-02-10', '2024-02-11', 'ENSAK - Amphi rouge', 'Ensak got talent ', 'Decouvrez les talents de nos futurs ingenieurs ! Soyez nombreux.', 'Ensak got talent .png', 56, 'Ensak Art'),
+(61, '2024-01-28', '2024-01-14', 'Complexe sportif ', 'Tournoi football', 'Notre club organise un tournoi de football. Les tickets sont limite ! ', 'Tournoi football.jpg', 57, 'bds'),
+(62, '2024-01-28', '2024-01-28', 'ENSAK - Batiment b', 'Solution challenge', 'Participez a cette competition innovante et gagnez un prix exclusive.', 'Solution challenge.jpg', 59, 'club google');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `demandeur`
+-- Structure de la table `demandeur`
 --
 
 CREATE TABLE `demandeur` (
@@ -77,25 +76,18 @@ CREATE TABLE `demandeur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `demandeur`
+-- Déchargement des données de la table `demandeur`
 --
 
 INSERT INTO `demandeur` (`id_demandeur`, `Nom`, `prenom`, `email`, `fonction`) VALUES
-(1, 'umayma', 'n', '', 'etudiant'),
-(2, 'NIOUA', 'OUMAYMA', 'oumaimanioua42@gmail.com', 'etudiant'),
-(3, 'NIOUA', 'OUMAYMA', 'oumaimanioua42@gmail.com', 'etudiant'),
-(4, 'NIOUA', 'OUMAYMA', 'oumaimanioua42@gmail.com', 'etudiant'),
-(5, 'NIOUA', 'OUMAYMA', 'oumaimanioua42@gmail.com', 'etudiant'),
-(6, 'NIOUA', 'AYOUB', 'yassire20006@gmail.com', 'etudiant'),
-(7, '', '', '', ''),
-(8, 'oum', 'oum', 'yassire20006@gmail.com', 'etudiant'),
-(9, 'hiba', 'nioua', 'hiba@gmail.com', 'etudiant'),
-(10, 'hiba', 'nioua', 'hiba@gmail.com', 'etudiant');
+(56, 'kenza', 'mouktabil', 'kenzamouktabil@gmail.com', 'etudiante'),
+(57, 'Rafik', 'Salma', 'salmarafik@gmail.com', 'etudiant'),
+(59, 'radouani', 'meryem', 'radouani@gmail.com', 'professeur');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `evenement`
+-- Structure de la table `evenement`
 --
 
 CREATE TABLE `evenement` (
@@ -110,17 +102,19 @@ CREATE TABLE `evenement` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `evenement`
+-- Déchargement des données de la table `evenement`
 --
 
 INSERT INTO `evenement` (`id_evenement`, `date_debut`, `lieu`, `date_fin`, `description`, `titre`, `photo`, `createur`) VALUES
-(1, '2023-11-12', 'kenitra', '2024-02-04', 'hbwdjkuacgy', 'forum', 'photo/forum.jpg', 'oumayma'),
-(2, '2024-02-12', 'kenitra', '2025-03-12', 'fvdbkshj', 'robotiquee', 'photo/robotiquee.jpg', 'oumi');
+(25, '2024-01-20', 'ENSAK - Batiment b', '2024-01-21', 'Rejoignez notre competition ce weekend ! Stay tuned.', 'Chess tournament ', 'photo/Chess tournament .jpg', 'Ensak chess'),
+(26, '2024-01-27', 'Douar al bacha', '2024-01-28', 'Together we create hope!Rejoignez notre cause et faites un don.', 'Caravane humanitaire 6', 'photo/Caravane humanitaire Al amal 6.jpg', 'Club associatif Anaruz'),
+(30, '2024-01-27', 'Taroudant', '2024-01-28', 'Ensemble tendons la main a celles qui ont perdu leur moitie.', 'Lamsat khayr ', 'photo/Lamsat khayr .jpg', 'Club afaak'),
+(31, '2024-05-10', 'ENSA Kenitra ', '2024-05-10', 'Journee sous le theme:La digitalisation et ia quel futur pour le maroc?', 'Les systemes embarques', 'photo/Journee Natuonale des systemes embarques.jpg', 'Club creer');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inscription`
+-- Structure de la table `inscription`
 --
 
 CREATE TABLE `inscription` (
@@ -129,18 +123,18 @@ CREATE TABLE `inscription` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `inscription`
+-- Déchargement des données de la table `inscription`
 --
 
 INSERT INTO `inscription` (`UTILISATEUR_id_utilisateur`, `EVENEMENT_id_evenement`) VALUES
-(1, 1),
-(2, 1),
-(3, 1);
+(9, 25),
+(10, 31),
+(11, 30);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `utilisateur`
+-- Structure de la table `utilisateur`
 --
 
 CREATE TABLE `utilisateur` (
@@ -152,104 +146,104 @@ CREATE TABLE `utilisateur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `utilisateur`
+-- Déchargement des données de la table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`id_utilisateur`, `fonctionalite`, `nom`, `prenom`, `email`) VALUES
-(1, 'etudiant', 'NIOUA', 'OUMAYMA', 'oumaimanioua42@gmail.com'),
-(2, 'etudiant', 'NIOUA', 'AYOUB', 'yassire20006@gmail.com'),
-(3, 'etudiant', 'NIOUA', 'mrt', 'oumayma.nioua@uit.ac.ma');
+(9, 'etudiant', 'mouktabil', 'soukaina', 'souka@gmail.com'),
+(10, 'professeur', 'oumaira', 'ilham', 'ilham@gmail.com'),
+(11, 'etudiant', 'nioua', 'oumaima', 'nioua@gmail.com');
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `commentaire`
+-- Index pour la table `commentaire`
 --
 ALTER TABLE `commentaire`
   ADD PRIMARY KEY (`UTILISATEUR_id_utilisateur`,`EVENEMENT_id_evenement`),
   ADD KEY `EVENEMENT_id_evenement` (`EVENEMENT_id_evenement`);
 
 --
--- Indexes for table `demande`
+-- Index pour la table `demande`
 --
 ALTER TABLE `demande`
   ADD PRIMARY KEY (`id_demande`),
   ADD KEY `id_demandeur` (`id_demandeur`);
 
 --
--- Indexes for table `demandeur`
+-- Index pour la table `demandeur`
 --
 ALTER TABLE `demandeur`
   ADD PRIMARY KEY (`id_demandeur`);
 
 --
--- Indexes for table `evenement`
+-- Index pour la table `evenement`
 --
 ALTER TABLE `evenement`
   ADD PRIMARY KEY (`id_evenement`);
 
 --
--- Indexes for table `inscription`
+-- Index pour la table `inscription`
 --
 ALTER TABLE `inscription`
   ADD PRIMARY KEY (`UTILISATEUR_id_utilisateur`,`EVENEMENT_id_evenement`),
   ADD KEY `EVENEMENT_id_evenement` (`EVENEMENT_id_evenement`);
 
 --
--- Indexes for table `utilisateur`
+-- Index pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
   ADD PRIMARY KEY (`id_utilisateur`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `demande`
+-- AUTO_INCREMENT pour la table `demande`
 --
 ALTER TABLE `demande`
-  MODIFY `id_demande` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_demande` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
--- AUTO_INCREMENT for table `demandeur`
+-- AUTO_INCREMENT pour la table `demandeur`
 --
 ALTER TABLE `demandeur`
-  MODIFY `id_demandeur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_demandeur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
--- AUTO_INCREMENT for table `evenement`
+-- AUTO_INCREMENT pour la table `evenement`
 --
 ALTER TABLE `evenement`
-  MODIFY `id_evenement` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_evenement` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT for table `utilisateur`
+-- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- Constraints for dumped tables
+-- Contraintes pour les tables déchargées
 --
 
 --
--- Constraints for table `commentaire`
+-- Contraintes pour la table `commentaire`
 --
 ALTER TABLE `commentaire`
   ADD CONSTRAINT `commentaire_ibfk_1` FOREIGN KEY (`UTILISATEUR_id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`),
   ADD CONSTRAINT `commentaire_ibfk_2` FOREIGN KEY (`EVENEMENT_id_evenement`) REFERENCES `evenement` (`id_evenement`);
 
 --
--- Constraints for table `demande`
+-- Contraintes pour la table `demande`
 --
 ALTER TABLE `demande`
   ADD CONSTRAINT `demande_ibfk_1` FOREIGN KEY (`id_demandeur`) REFERENCES `demandeur` (`id_demandeur`);
 
 --
--- Constraints for table `inscription`
+-- Contraintes pour la table `inscription`
 --
 ALTER TABLE `inscription`
   ADD CONSTRAINT `inscription_ibfk_1` FOREIGN KEY (`UTILISATEUR_id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`),
