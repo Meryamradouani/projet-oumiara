@@ -59,6 +59,10 @@ if (!$result) {
     .navbar{
       background-color: #22427C;
     height:100PX;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; 
     }
 
     .card:hover {
@@ -236,7 +240,7 @@ if (!$result) {
 </nav>
     
     
-<br><br>
+<br><br><br><br><br>
     <?php
     // Afficher la liste des événements à venir
     while ($row = mysqli_fetch_assoc($result)) {

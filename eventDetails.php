@@ -78,56 +78,7 @@ if (!$commentairesResult) {
 		<meta charset="utf_8" />
 		<title>creer un compte</title> 
     <style>
-    
-        .main {
-            background-color: #dff2ff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            padding: 40px;
-            width: 400px;
-            text-align: center;
-            width:600PX;
-           
-          /* Center the container horizontally */
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        label {
-            font-size: 18px;
-            font-weight: 500;
-            color: #333;
-            margin-bottom: 8px;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        input[type="text"],
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 12px 20px;
-    margin-bottom: 10px; /* Ajustez la marge en bas selon vos besoins */
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-        input[type="submit"]:hover {
-            background-color: lightblue;
-        }
-
+   
     .container1{
             background-image: url('photo/demende.jpg');
             background-size: 1000PX;
@@ -154,6 +105,10 @@ input[type="password"] {
     .navbar{
       background-color: #22427C;
     height:80PX;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; 
     }
 
     .card:hover {

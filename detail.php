@@ -48,6 +48,10 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
     .navbar{
       background-color: #22427C;
     height:80PX;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; 
     }
 
     .card:hover {
@@ -175,6 +179,25 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
     
 
     }
+    #table {
+    display: table;
+    width: 100%;
+    height: 60%;
+    background-color: #dff2ff;
+ 
+  }
+  
+  #centeralign {
+    display: table-cell;
+    vertical-align: middle;
+   
+  }
+  h1 {
+    text-transform: uppercase;
+    letter-spacing: 1pt;
+    font-size: 30pX;
+    margin-bottom: 15px;
+  }
 
 </style>
 
@@ -220,14 +243,14 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
 
     </div>
   </div>
-</nav><br>
+</nav><br><br><br><br>
 <div>
     <a name="event1"><h2><div id="table">
         <div id="centeralign">
           <h1>Forum ENSAK-Entreprises de kenitra</h1>
           <h3>L'unique Forum ENSAK-Entreprises De Kenitra refait surface pour une 7ème édition .</h3>
         </div>
-      </h2></a></div>
+      </h2></a></div><br><br>
     <img src="photo/WhatsApp Image 2023-12-09 at 23.16.44_9d323da0.jpg" class="img-fluid" alt="..."><br><br>
     <div id="parag">Le forum ENSAK Entreprises ouvre ses portes, pour la 7ème année consécutive, le Mercredi 29 Novembre 2023 à
         l'École Nationale des Sciences Appliquées de Kenitra. Cet événement phare sera sous le thème de « La révolution
@@ -635,10 +658,17 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
                     </div>
                 </div>
             </div><br><br>
-
-
-
-
+            <a name="event6"><h2><div id="table">
+        <div id="centeralign">
+          <h1>soirée ftour  </h1>
+          <h3>pour la premier fois une opportunité unique  .</h3>
+        </div>
+      </h2></a></div><br><br>
+      <img src="photo/fotor.jpg" width="600PX" height="600PX" alt="..."><br><br><br>
+      <div id="parag"> Cette année, nous nous sommes retrouvés seuls, loins de nos proches avec qui nous avions l'habitude de partager la table du Ftour chaque Ramadan.
+Aujourd'hui, on vous donne l'opportunité de revivre cette ambiance de partage avec vos amis autour d'une table variée et une animation musicale authentique et chaleureuse 😍
+              </div><br><br>
+              <video width="800Px" height="600PX" src="photo/fotor.mp4" controls="controls" poster="photo/fotor.jpg" type="video1/mp4"></video><br><br>
 
 
 
