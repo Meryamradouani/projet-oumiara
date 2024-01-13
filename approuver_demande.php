@@ -30,7 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
         $queryDeleteDemande = "DELETE FROM demande WHERE id_demande = $id_demande";
         $resultDeleteDemande = mysqli_query($link, $queryDeleteDemande);
 
-       
+        header('Location: admin.php');
+        exit();
 
     // Libérer le résultat de la requête de la demande
     mysqli_free_result($resultDemande);
