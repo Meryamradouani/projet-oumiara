@@ -3,10 +3,11 @@
     margin-top: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    width: 800px;
+    width: 75%;
     display: flex;
     margin-left: 200px;
     align-items: flex-start;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align:center; /* Aligner les éléments sur le côté supérieur du conteneur */
 }
 

@@ -77,183 +77,135 @@ if (!$commentairesResult) {
 	<head>
 		<meta charset="utf_8" />
 		<title>creer un compte</title> 
-    <style>
-    
-        .main {
-            background-color: #dff2ff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            padding: 40px;
-            width: 400px;
-            text-align: center;
-            width:600PX;
-           
-          /* Center the container horizontally */
-        }
+        <style>
+   
+   .container1{
+           background-image: url('photo/demende.jpg');
+           background-size: 1000PX;
+           background-repeat: no-repeat; 
+           margin: 0;
+           padding: 90px;
+           display: flex;
+           justify-content: right;
+           align-items: center;
+           height: 100vh;
+           font-family: "Nunito";
+       }
+   h1 {
+       font-size: 70px;
+       font-family: "Eczar";
+       margin-top: 6px;
+       margin-bottom: 10px;
+   }
 
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+   .card {
+       border-radius: 30px;
+       margin-bottom: 20px;
+   }
+   .navbar{
+     background-color: #22427C;
+   height:80PX;
+   }
 
-        label {
-            font-size: 18px;
-            font-weight: 500;
-            color: #333;
-            margin-bottom: 8px;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        input[type="text"],
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 12px 20px;
-    margin-bottom: 10px; /* Ajustez la marge en bas selon vos besoins */
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-        input[type="submit"]:hover {
-            background-color: lightblue;
-        }
-
-    .container1{
-            background-image: url('photo/demende.jpg');
-            background-size: 1000PX;
-            background-repeat: no-repeat; 
-            margin: 0;
-            padding: 90px;
-            display: flex;
-            justify-content: right;
-            align-items: center;
-            height: 100vh;
-            font-family: "Nunito";
-        }
-    h1 {
-        font-size: 70px;
-        font-family: "Eczar";
-        margin-top: 6px;
-        margin-bottom: 10px;
-    }
-
-    .card {
-        border-radius: 30px;
-        margin-bottom: 20px;
-    }
-    .navbar{
-      background-color: #22427C;
-    height:80PX;
-    }
-
-    .card:hover {
-        transform: scale(1.05);
-        transition: transform 0.3s ease-in-out;
-    }
-    /* Styles pour le footer */
-    .footer {
-    background-color: #22427C; /* Couleur de fond */
-    color: white; /* Couleur du texte */
-    height: 400px; /* Ajustez la propriété de height pour modifier la hauteur */
-    text-align: center; /* Alignement du texte */
+   .card:hover {
+       transform: scale(1.05);
+       transition: transform 0.3s ease-in-out;
+   }
+   /* Styles pour le footer */
+   .footer {
+   background-color: #22427C; /* Couleur de fond */
+   color: white; /* Couleur du texte */
+   height: 400px; /* Ajustez la propriété de height pour modifier la hauteur */
+   text-align: center; /* Alignement du texte */
 }
 /* Styles pour la section du logo */
 .footer img {
-    width: 100%; /* La largeur du logo prend toute la largeur de son conteneur */
-    max-width: 300px; /* Largeur maximale du logo */
-    margin-bottom: 20px; /* Marge en bas du logo */
+   width: 100%; /* La largeur du logo prend toute la largeur de son conteneur */
+   max-width: 300px; /* Largeur maximale du logo */
+   margin-bottom: 20px; /* Marge en bas du logo */
 }
 
 /* Styles pour les liens dans les colonnes */
 .footer a {
-    color: white; /* Couleur du texte des liens */
-    text-decoration: none; /* Pas de soulignement */
+   color: white; /* Couleur du texte des liens */
+   text-decoration: none; /* Pas de soulignement */
 }
 
 /* Styles pour les colonnes */
 .footer .col {
-    margin-bottom: 20px; /* Espacement en bas de chaque colonne */
+   margin-bottom: 20px; /* Espacement en bas de chaque colonne */
 }
 
 /* Styles pour la section Google Maps */
 .footer iframe {
-    width: 100%; /* La carte Google Maps prend toute la largeur de son conteneur */
-    height: 150px; /* Hauteur de la carte Google Maps */
-    border: 0; /* Pas de bordure */
-    margin-bottom: 20px; /* Marge en bas de la carte */
+   width: 100%; /* La carte Google Maps prend toute la largeur de son conteneur */
+   height: 150px; /* Hauteur de la carte Google Maps */
+   border: 0; /* Pas de bordure */
+   margin-bottom: 20px; /* Marge en bas de la carte */
 }
 
 /* Styles pour le texte du bas du footer */
 .footer .text-center {
-    background-color: rgba(0, 0, 0, 0.05); /* Couleur de fond légère */
-    padding: 10px; /* Espacement intérieur */
+   background-color: rgba(0, 0, 0, 0.05); /* Couleur de fond légère */
+   padding: 10px; /* Espacement intérieur */
 }
 
 
-    .card-title {
-        font-size: 1.25rem;
-    }
- 
-    @media (max-width: 768px) {
-        .navbar-collapse {
-            background-color: darkcyan;
-        }
+   .card-title {
+       font-size: 1.25rem;
+   }
 
-        .navbar-nav {
-            flex-direction: column;
-            align-items: flex-start;
-        }
+   @media (max-width: 768px) {
+       .navbar-collapse {
+           background-color: darkcyan;
+       }
 
-        .navbar-nav .nav-item {
-            margin-right: 0;
-        }
+       .navbar-nav {
+           flex-direction: column;
+           align-items: flex-start;
+       }
 
-        .navbar-brand img {
-            max-width: 80%;
-        }
-    }
-    .navbar-nav .nav-link {
-    color:#dff2ff !important; /* Couleur blanche pour les liens */
+       .navbar-nav .nav-item {
+           margin-right: 0;
+       }
+
+       .navbar-brand img {
+           max-width: 80%;
+       }
+   }
+   .navbar-nav .nav-link {
+   color:#dff2ff !important; /* Couleur blanche pour les liens */
 }
 
 .navbar-nav .nav-link:hover {
-    color: #dff2ff !important; /* Couleur au survol */
+   color: #dff2ff !important; /* Couleur au survol */
 }
 .btn-search {
-    background-color: #dff2ff;
-    color: #22427C;
+   background-color: #dff2ff;
+   color: #22427C;
 }
 
 .btn {
-        background-color: #22427C;
-        border-color: #22427C;
-        color: white;
-    }
+       background-color: #22427C;
+       border-color: #22427C;
+       color: white;
+   }
 
 /* Couleur du bouton Déconnexion */
 .btn-login {
-    background-color: #dff2ff;
-    color: #22427C;
+   background-color: #dff2ff;
+   color: #22427C;
 }
 
 /* Couleur du bouton Déconnexion */
 .btn-logout {
-    background-color: #dff2ff;
-    color: #22427C;
+   background-color: #dff2ff;
+   color: #22427C;
 }
 
-   
+  
 </style>
+<link rel="stylesheet" href="mstyle.css">
 <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="npm i bootstrap-icons">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">  
@@ -289,10 +241,7 @@ input[type="password"] {
         <?php endif; ?>
       </ul>
       <!-- Update your search form with this -->
-
-
-
-    </div>
+   </div>
   </div>
 </nav><br><br>
     <div class="container">
@@ -304,7 +253,7 @@ input[type="password"] {
             </div>
             <div class="event-details">
                 <!-- Afficher le titre de l'événement -->
-                <h1><?= $eventDetails['titre'] ?></h1>
+                <h2><?= $eventDetails['titre'] ?></h2>
                 
                 <!-- Afficher les détails de l'événement -->
                 <p>Date de début : <?= $eventDetails['date_debut'] ?></p>
@@ -315,16 +264,16 @@ input[type="password"] {
                 <a href="inscription.php?event_id=<?= $eventDetails['id_evenement'] ?>" class="link-container">S'inscrire à <?= $eventDetails['titre'] ?></a>
             </div>
         </div>
-        
+        <div class="comont-details">
         <!-- Formulaire pour ajouter un commentaire -->
         <form method="post" action="" class="form-container">
             <label for="commentaire"></label>
-            <textarea name="commentaire" id="commentaire" rows="4" cols="50"></textarea>
+            <input type="text" name="commentaire" id="commentaire" rows="4" cols="50"/>
             <br>
             <input type="submit" value="Ajouter commentaire">
         </form>
            <!-- Afficher les commentaires -->
-        <h2> Commentaires récents:</h2>
+        <h4> Commentaires récents:</h4>
         <ul class="comments-container">
             <?php
             // Afficher les commentaires
@@ -336,6 +285,7 @@ input[type="password"] {
             mysqli_free_result($commentairesResult);
             ?>
         </ul>
+        </div>
     </div>
     <br>
     <footer class="footer mt-5 mb-5 text-white" style="background-color: #22427C; padding: 20px;">
