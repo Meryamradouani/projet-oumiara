@@ -268,7 +268,7 @@ input[type="password"] {
             <label for="Titre">Titre:</label>
             <input type="text" name="titre" required="required"/>
             <label for="Createur">Createur:</label>
-            <input type="text" name="titre" required="required"/>
+            <input type="text" name="createur" required="required"/>
             <label for="Date_debut">Date_debut:</label>
             <input type="date" name="dated" required="required"/>
             <label for="Date_fin">Date_fin:</label>
