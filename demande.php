@@ -279,7 +279,7 @@ input[type="password"] {
 
     </div>
   </div>
-</nav><br><br>
+</nav><br><br><br><br>
 <div class="container1"> <div class="main">
         <form action="traitement.php" method="post" enctype="multipart/form-data">
             <label for="Titre">Titre:</label>

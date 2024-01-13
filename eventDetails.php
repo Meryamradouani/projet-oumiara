@@ -77,20 +77,13 @@ if (!$commentairesResult) {
 	<head>
 		<meta charset="utf_8" />
 		<title>creer un compte</title> 
-    <style>
-   
-    .container1{
-            background-image: url('photo/demende.jpg');
-            background-size: 1000PX;
-            background-repeat: no-repeat; 
-            margin: 0;
-            padding: 90px;
-            display: flex;
-            justify-content: right;
-            align-items: center;
-            height: 100vh;
-            font-family: "Nunito";
-        }
+
+        <style>
+    body {
+      
+        font-family: "Nunito";
+    }
+
     h1 {
         font-size: 70px;
         font-family: "Eczar";
@@ -119,7 +112,7 @@ if (!$commentairesResult) {
     .footer {
     background-color: #22427C; /* Couleur de fond */
     color: white; /* Couleur du texte */
-    height: 400px; /* Ajustez la propriété de height pour modifier la hauteur */
+    height: 450px; /* Ajustez la propriété de height pour modifier la hauteur */
     text-align: center; /* Alignement du texte */
 }
 /* Styles pour la section du logo */
@@ -207,8 +200,38 @@ if (!$commentairesResult) {
     color: #22427C;
 }
 
-   
+    @media (max-width: 500px) {
+        .navbar-nav {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .navbar-toggler {
+            display: block;
+        }
+
+        .navbar-collapse {
+            display: none;
+        }
+
+        .navbar-nav .nav-item {
+            margin-bottom: 5px;
+        }
+
+        .navbar-brand img {
+            max-width: 60%;
+        }
+
+        .navbar-collapse.show {
+            display: flex;
+            flex-direction: column;
+        }
+    
+
+    }
+
 </style>
+<link rel="stylesheet" href="mstyle.css">
 <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="npm i bootstrap-icons">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">  
@@ -244,10 +267,7 @@ if (!$commentairesResult) {
         <?php endif; ?>
       </ul>
       <!-- Update your search form with this -->
-
-
-
-    </div>
+   </div>
   </div>
 </nav><br><br>
     <div class="container">
@@ -259,7 +279,7 @@ if (!$commentairesResult) {
             </div>
             <div class="event-details">
                 <!-- Afficher le titre de l'événement -->
-                <h1><?= $eventDetails['titre'] ?></h1>
+                <h2><?= $eventDetails['titre'] ?></h2>
                 
                 <!-- Afficher les détails de l'événement -->
                 <p>Date de début : <?= $eventDetails['date_debut'] ?></p>
@@ -270,16 +290,16 @@ if (!$commentairesResult) {
                 <a href="inscription.php?event_id=<?= $eventDetails['id_evenement'] ?>" class="link-container">S'inscrire à <?= $eventDetails['titre'] ?></a>
             </div>
         </div>
-        
+        <div class="comont-details">
         <!-- Formulaire pour ajouter un commentaire -->
         <form method="post" action="" class="form-container">
             <label for="commentaire"></label>
-            <textarea name="commentaire" id="commentaire" rows="4" cols="50"></textarea>
+            <input type="text" name="commentaire" id="commentaire" rows="4" cols="50"/>
             <br>
             <input type="submit" value="Ajouter commentaire">
         </form>
            <!-- Afficher les commentaires -->
-        <h2> Commentaires récents:</h2>
+        <h4> Commentaires récents:</h4>
         <ul class="comments-container">
             <?php
             // Afficher les commentaires
@@ -291,6 +311,7 @@ if (!$commentairesResult) {
             mysqli_free_result($commentairesResult);
             ?>
         </ul>
+        </div>
     </div>
     <br>
     <footer class="footer mt-5 mb-5 text-white" style="background-color: #22427C; padding: 20px;">
@@ -329,6 +350,6 @@ if (!$commentairesResult) {
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
         © 2024 ENSAK: <a class="text-body" href="https://eat.uit.ac.ma/">uit.ac.ma</a>
     </div>
-    </footer>
+</footer>
 </body>
 </html>
