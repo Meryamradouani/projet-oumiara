@@ -36,6 +36,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        }}
        $requette="INSERT INTO demandeur(Nom,prenom,email,fonction) VALUES('$nom','$prenom','$email','$fonction')";
        $resultat=mysqli_query($link,$requette);
+       $query = "SELECT * FROM demandeur WHERE email = '$email'";
+
+       $resultat = mysqli_query($link, $query);
+       if (mysqli_num_rows($resultat) > 0) {
+           $user = mysqli_fetch_assoc($resultat);
+          if ($nom == $user['Nom']) {
+               $_SESSION['loggedin'] = true;
+               $_SESSION['nom'] = $user['Nom'];
+               $_SESSION['prenom'] = $user['prenom'];
+               $_SESSION['email'] = $user['email'];
+               $_SESSION['fonction']=$user['fonction'];
+               $_SESSION['id_demandeur'] = $user['id_demandeur'];
+          }}
     mysqli_close($link);
 }
 ?>
